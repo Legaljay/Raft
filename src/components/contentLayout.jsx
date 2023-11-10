@@ -25,9 +25,9 @@ import chevronDown from "../assets/chevron-down.svg";
 import frame106 from "../assets/Frame 106.svg";
 import frame112 from "../assets/Frame 112.svg";
 import group8 from "../assets/Group 8.svg";
-import banknotes from '../assets/svg/banknotes.svg'
-import circlestack from '../assets/svg/circle-stack.png'
-import arowleftright from '../assets/svg/arrows-right-left.svg'
+import banknotes from "../assets/svg/banknotes.svg";
+import circlestack from "../assets/svg/circle-stack.png";
+import arowleftright from "../assets/svg/arrows-right-left.svg";
 
 export default function ContentLayout() {
   return (
@@ -145,16 +145,24 @@ export default function ContentLayout() {
           }
         />
         <div className="mt-[124px]">
-          <img src={people} alt="people cash" className="w-[1296px] mx-auto"/>
+          <img src={people} alt="people cash" className="w-[1296px] mx-auto" />
         </div>
         <div className="mt-[171px]">
-            <div className="w-[1296px] flex gap-[24px] mx-auto">
-                {
-                    data.map((item) => (
-                        <Offers key={item.icon} {...item}/>
-                    ))
-                }
-            </div>
+          <div className="w-[1296px] flex gap-[24px] mx-auto">
+            {data.map((item) => (
+              <Offers key={item.icon} {...item} />
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="mt-[17px]">
+        <div className="bg-[#48D64C] px-[72px] py-[132px]">
+          <p className="text-[128px] font-[400] leading-normal text-[#070606]">
+            Smart investments, <br />
+            secure payments, <br />
+            and expert guidance, all <br />
+            in one place.
+          </p>
         </div>
       </section>
     </>
@@ -179,11 +187,7 @@ function GridMages() {
     <div className="flex flex-wrap mt-[80px] gap-y-8">
       <div className="flex justify-between text-white gap-1 mx-auto w-[1296px]">
         <div className="relative custom rounded-[12px] w-[822px] h-[500px] flex flex-col gap-1 justify-around items-center">
-          <img 
-            src={frame112} 
-            alt="Elev" 
-            className="w-[478px] h-[236px] z-10" 
-          />
+          <img src={frame112} alt="Elev" className="w-[478px] h-[236px] z-10" />
           <div className="self-start ml-[40px] flex flex-col gap-[16px] w-[516px]">
             <h1 className="text-[#fff] text-[32px] font-[510] leading-[28px]">
               Seamless Payments
@@ -210,7 +214,8 @@ function GridMages() {
             </h1>
             <p className="text-[16px] leading-[24px] font-[400] text-[#BDBDBD]">
               Grow your wealth confidently with our personalized investment
-              solutions, tailored to <br/>your financial goals.
+              solutions, tailored to <br />
+              your financial goals.
             </p>
           </div>
           <div className="absolute top-0 left-1 z-[1]">
@@ -230,8 +235,8 @@ function GridMages() {
               Wealth Management
             </h1>
             <p className="text-[16px] leading-[24px] font-[400] text-[#BDBDBD]">
-              Make informed decisions for your financial <br/>future with our wealth
-              management expertise.
+              Make informed decisions for your financial <br />
+              future with our wealth management expertise.
             </p>
           </div>
           <div className="absolute top-0 left-1 z-[1]">
@@ -295,32 +300,34 @@ function Strokes({ width }) {
 }
 
 const data = [
-    {
-        icon: banknotes,
-        title: "No minimum balance fees",
-        text: "Say goodbye to minimum balance fees. Your account, your balance—no hidden charges",
-    },
-    {
-        icon: circlestack,
-        title: "No monthly fees",
-        text: "Bank with us without worrying about monthly fees. Keep more of your money where it belongs—in your account",
-    },
-    {
-        icon: arowleftright,
-        title: "No bank transfer fees",
-        text: "Seamlessly transfer funds without the extra cost. Send and receive money with zero bank transfer fees.",
-    }
-]
-function Offers({icon, title, text}){
-    return (
-        <div className="w-[416px] flex flex-col gap-[10px]">
-            <div className="flex gap-[8px] items-center">
-                <img src={icon} alt="" className="w-[24px] h-[24px]"/>
-                <h3 className="text-[24px] font-[510] leading-normal text-[#fff]">{title}</h3>
-            </div>
-            <p className="text-[16px] font-[400] leading-[24px] text-[#bdbdbd]">
-                {text}
-            </p>
-        </div>
-    )
+  {
+    icon: banknotes,
+    title: "No minimum balance fees",
+    text: "Say goodbye to minimum balance fees. Your account, your balance—no hidden charges",
+  },
+  {
+    icon: circlestack,
+    title: "No monthly fees",
+    text: "Bank with us without worrying about monthly fees. Keep more of your money where it belongs—in your account",
+  },
+  {
+    icon: arowleftright,
+    title: "No bank transfer fees",
+    text: "Seamlessly transfer funds without the extra cost. Send and receive money with zero bank transfer fees.",
+  },
+];
+function Offers({ icon, title, text }) {
+  return (
+    <div className="w-[416px] flex flex-col gap-[10px]">
+      <div className="flex gap-[8px] items-center">
+        <img src={icon} alt="" className="w-[24px] h-[24px]" />
+        <h3 className="text-[24px] font-[510] leading-normal text-[#fff]">
+          {title}
+        </h3>
+      </div>
+      <p className="text-[16px] font-[400] leading-[24px] text-[#bdbdbd]">
+        {text}
+      </p>
+    </div>
+  );
 }
