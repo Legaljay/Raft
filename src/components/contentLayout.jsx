@@ -1,4 +1,5 @@
 import People from "../assets/Images/people.png";
+import people from "../assets/Images/Frame 31.svg";
 import ArrowLeft from "../assets/Images/arrows-right-left.png";
 import Banknotes from "../assets/Images/banknotes.png";
 import Bloomberg from "../assets/Images/bloomberg-1.png";
@@ -24,6 +25,9 @@ import chevronDown from "../assets/chevron-down.svg";
 import frame106 from "../assets/Frame 106.svg";
 import frame112 from "../assets/Frame 112.svg";
 import group8 from "../assets/Group 8.svg";
+import banknotes from '../assets/svg/banknotes.svg'
+import circlestack from '../assets/svg/circle-stack.png'
+import arowleftright from '../assets/svg/arrows-right-left.svg'
 
 export default function ContentLayout() {
   return (
@@ -140,8 +144,17 @@ export default function ContentLayout() {
             "We believe that managing your finances should be effortless and cost-effective. That's why we offer you the freedom you deserve"
           }
         />
-        <div>
-          <img src="" alt="" />
+        <div className="mt-[124px]">
+          <img src={people} alt="people cash" className="w-[1296px] mx-auto"/>
+        </div>
+        <div className="mt-[171px]">
+            <div className="w-[1296px] flex gap-[24px] mx-auto">
+                {
+                    data.map((item) => (
+                        <Offers key={item.icon} {...item}/>
+                    ))
+                }
+            </div>
         </div>
       </section>
     </>
@@ -279,4 +292,35 @@ function Strokes({ width }) {
       </defs>
     </svg>
   );
+}
+
+const data = [
+    {
+        icon: banknotes,
+        title: "No minimum balance fees",
+        text: "Say goodbye to minimum balance fees. Your account, your balance—no hidden charges",
+    },
+    {
+        icon: circlestack,
+        title: "No monthly fees",
+        text: "Bank with us without worrying about monthly fees. Keep more of your money where it belongs—in your account",
+    },
+    {
+        icon: arowleftright,
+        title: "No bank transfer fees",
+        text: "Seamlessly transfer funds without the extra cost. Send and receive money with zero bank transfer fees.",
+    }
+]
+function Offers({icon, title, text}){
+    return (
+        <div className="w-[416px] flex flex-col gap-[10px]">
+            <div className="flex gap-[8px] items-center">
+                <img src={icon} alt="" className="w-[24px] h-[24px]"/>
+                <h3 className="text-[24px] font-[510] leading-normal text-[#fff]">{title}</h3>
+            </div>
+            <p className="text-[16px] font-[400] leading-[24px] text-[#bdbdbd]">
+                {text}
+            </p>
+        </div>
+    )
 }
