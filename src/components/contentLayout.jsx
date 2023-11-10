@@ -164,18 +164,26 @@ export default function ContentLayout() {
             in one place.
           </p>
         </div>
+        <div>
+            <Header 
+                title={'Confidently Shape Your Financial Future'}
+                text={'At RAFT, we empower you to confidently shape your financial future.Our modern approach simplifies saving and investing, making it easier than ever.'}
+                textClass={'text-start'}
+                t={''}
+            />
+        </div>
       </section>
     </>
   );
 }
 
-function Header({ title, text }) {
+function Header({ title, text, textClass, t }) {
   return (
-    <div className="flex flex-col items-center gap-[24px] w-[896px] mx-auto">
-      <p className="text-[76px] text-[#ffffff] text-center font-[400] leading-tight">
+    <div className={`flex flex-col ${t || 'items-center'} gap-[24px] w-[896px] ${t??'mx-auto'}`}>
+      <p className={`text-[76px] text-[#ffffff] ${textClass??'text-center'} font-[400] leading-tight`}>
         {title}
       </p>
-      <p className="text-[#989898] text-[20px] w-[668px] text-center leading-[28px] font-[400]">
+      <p className={`text-[#989898] text-[20px] w-[668px] ${textClass||'text-center'} leading-[28px] font-[400]`}>
         {text}
       </p>
     </div>
