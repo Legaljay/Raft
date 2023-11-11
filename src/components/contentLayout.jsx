@@ -14,20 +14,21 @@ import moneySend from "../assets/Images/money-send.png";
 import reuterLogo from "../assets/Images/reuters-2-1 1.png";
 import walletMinus from "../assets/Images/wallet-minus.png";
 import frameOne from "../assets/Frame94.svg";
-import frametwo from "../assets/Images/Frame 122atm.png";
+import customATM from "../assets/svg/atm.svg";
 import framethree from "../assets/Images/Frame 127.png";
 import framefour from "../assets/Images/Frame 130.png";
 import framefive from "../assets/Images/Frame 136.png";
 import framesix from "../assets/Images/Frame 150.png";
 import arrowsmallleft from "../assets/arrow-small-left.svg";
 import arrowsmallright from "../assets/arrow-small-right.svg";
-import chevronDown from "../assets/chevron-down.svg";
 import frame106 from "../assets/Frame 106.svg";
 import frame112 from "../assets/Frame 112.svg";
 import group8 from "../assets/Group 8.svg";
 import banknotes from "../assets/svg/banknotes.svg";
 import circlestack from "../assets/svg/circle-stack.png";
 import arowleftright from "../assets/svg/arrows-right-left.svg";
+import TextExpander from "./Accordion";
+import Accordion from "./Accordion";
 
 export default function ContentLayout() {
   return (
@@ -37,7 +38,7 @@ export default function ContentLayout() {
           <div className="w-[896px] flex flex-col gap-[32px]  mx-auto justify-center items-center text-white">
             <div className="items-center flex-col flex gap-[16px] self-stretch">
               <span className="flex justify-center items-center gap-[10px] px-[6px] py-[12px] w-[204px] h-[32px]  bg-white/20  rounded-[100px] text-center">
-                <span className="text-[16px] font-[400] text-[#DCDCDC] leading-normal">
+                <span className="text-[16px] font-[400] text-[#DCDCDC] leading-none">
                   Introducing Raft Cards
                 </span>
                 <svg
@@ -56,10 +57,10 @@ export default function ContentLayout() {
                 </svg>
               </span>
               <div className="relative flex flex-col gap-[24px] justify-center items-center">
-                <p className="w-[896px] text-[96px] text-center drop-shadow font-normal leading-tight p-0 ">
+                <p className="w-[896px] text-[96px] text-center drop-shadow font-none leading-tight p-0 ">
                   Building the future of banking
                 </p>
-                <p className="w-[668px] text-center text-[24px] text-[#BDBDBD] font-[400] leading-normal">
+                <p className="w-[668px] text-center text-[24px] text-[#BDBDBD] font-[400] leading-none">
                   Experience the future of banking with RAFT. We&apos;re here to
                   empower your financial journey.
                 </p>
@@ -75,7 +76,7 @@ export default function ContentLayout() {
                       d="M50.4118 1H1V46.8333M50.4118 1V46.8333M50.4118 1H99.8235M50.4118 46.8333H1M50.4118 46.8333H99.8235M50.4118 46.8333V92.6667M1 46.8333V92.6667M99.8235 1V46.8333M99.8235 1H149.235M99.8235 46.8333H149.235M99.8235 46.8333V92.6667M149.235 1V46.8333M149.235 1H198.647M149.235 46.8333H198.647M149.235 46.8333V92.6667M198.647 1V46.8333M198.647 1H248.059M198.647 46.8333H248.059M198.647 46.8333V92.6667M248.059 1V46.8333M248.059 1H297.471M248.059 46.8333H297.471M248.059 46.8333V92.6667M297.471 1V46.8333M297.471 1H346.882M297.471 46.8333H346.882M297.471 46.8333V92.6667M346.882 1V46.8333M346.882 1H396.294M346.882 46.8333H396.294M346.882 46.8333V92.6667M396.294 1V46.8333M396.294 1H445.706M396.294 46.8333H445.706M396.294 46.8333V92.6667M445.706 1V46.8333M445.706 1H495.118M445.706 46.8333H495.118M445.706 46.8333V92.6667M495.118 1V46.8333M495.118 1H544.529M495.118 46.8333H544.529M495.118 46.8333V92.6667M544.529 1V46.8333M544.529 1H593.941M544.529 46.8333H593.941M544.529 46.8333V92.6667M593.941 1V46.8333M593.941 1H643.353M593.941 46.8333H643.353M593.941 46.8333V92.6667M643.353 1V46.8333M643.353 1H692.765M643.353 46.8333H692.765M643.353 46.8333V92.6667M692.765 1V46.8333M692.765 1H742.177M692.765 46.8333H742.177M692.765 46.8333V92.6667M742.177 1V46.8333M742.177 1H791.588M742.177 46.8333H791.588M742.177 46.8333V92.6667M791.588 1V46.8333M791.588 1H841V46.8333M791.588 46.8333H841M791.588 46.8333V92.6667M841 46.8333V92.6667M50.4118 92.6667H1M50.4118 92.6667H99.8235M50.4118 92.6667V138.5M1 92.6667V138.5M99.8235 92.6667H149.235M99.8235 92.6667V138.5M149.235 92.6667H198.647M149.235 92.6667V138.5M198.647 92.6667H248.059M198.647 92.6667V138.5M248.059 92.6667H297.471M248.059 92.6667V138.5M297.471 92.6667H346.882M297.471 92.6667V138.5M346.882 92.6667H396.294M346.882 92.6667V138.5M396.294 92.6667H445.706M396.294 92.6667V138.5M445.706 92.6667H495.118M445.706 92.6667V138.5M495.118 92.6667H544.529M495.118 92.6667V138.5M544.529 92.6667H593.941M544.529 92.6667V138.5M593.941 92.6667H643.353M593.941 92.6667V138.5M643.353 92.6667H692.765M643.353 92.6667V138.5M692.765 92.6667H742.177M692.765 92.6667V138.5M742.177 92.6667H791.588M742.177 92.6667V138.5M791.588 92.6667H841M791.588 92.6667V138.5M841 92.6667V138.5M50.4118 138.5H1M50.4118 138.5H99.8235M50.4118 138.5V184.333M1 138.5V184.333M99.8235 138.5H149.235M99.8235 138.5V184.333M149.235 138.5H198.647M149.235 138.5V184.333M198.647 138.5H248.059M198.647 138.5V184.333M248.059 138.5H297.471M248.059 138.5V184.333M297.471 138.5H346.882M297.471 138.5V184.333M346.882 138.5H396.294M346.882 138.5V184.333M396.294 138.5H445.706M396.294 138.5V184.333M445.706 138.5H495.118M445.706 138.5V184.333M495.118 138.5H544.529M495.118 138.5V184.333M544.529 138.5H593.941M544.529 138.5V184.333M593.941 138.5H643.353M593.941 138.5V184.333M643.353 138.5H692.765M643.353 138.5V184.333M692.765 138.5H742.177M692.765 138.5V184.333M742.177 138.5H791.588M742.177 138.5V184.333M791.588 138.5H841M791.588 138.5V184.333M841 138.5V184.333M50.4118 184.333H1M50.4118 184.333H99.8235M50.4118 184.333V230.167M1 184.333V230.167M99.8235 184.333H149.235M99.8235 184.333V230.167M149.235 184.333H198.647M149.235 184.333V230.167M198.647 184.333H248.059M198.647 184.333V230.167M248.059 184.333H297.471M248.059 184.333V230.167M297.471 184.333H346.882M297.471 184.333V230.167M346.882 184.333H396.294M346.882 184.333V230.167M396.294 184.333H445.706M396.294 184.333V230.167M445.706 184.333H495.118M445.706 184.333V230.167M495.118 184.333H544.529M495.118 184.333V230.167M544.529 184.333H593.941M544.529 184.333V230.167M593.941 184.333H643.353M593.941 184.333V230.167M643.353 184.333H692.765M643.353 184.333V230.167M692.765 184.333H742.177M692.765 184.333V230.167M742.177 184.333H791.588M742.177 184.333V230.167M791.588 184.333H841M791.588 184.333V230.167M841 184.333V230.167M50.4118 230.167H1M50.4118 230.167H99.8235M50.4118 230.167V276M1 230.167V276M99.8235 230.167H149.235M99.8235 230.167V276M149.235 230.167H198.647M149.235 230.167V276M198.647 230.167H248.059M198.647 230.167V276M248.059 230.167H297.471M248.059 230.167V276M297.471 230.167H346.882M297.471 230.167V276M346.882 230.167H396.294M346.882 230.167V276M396.294 230.167H445.706M396.294 230.167V276M445.706 230.167H495.118M445.706 230.167V276M495.118 230.167H544.529M495.118 230.167V276M544.529 230.167H593.941M544.529 230.167V276M593.941 230.167H643.353M593.941 230.167V276M643.353 230.167H692.765M643.353 230.167V276M692.765 230.167H742.177M692.765 230.167V276M742.177 230.167H791.588M742.177 230.167V276M791.588 230.167H841M791.588 230.167V276M841 230.167V276M50.4118 276H1M50.4118 276H99.8235M50.4118 276V321.833M1 276V321.833M99.8235 276H149.235M99.8235 276V321.833M149.235 276H198.647M149.235 276V321.833M198.647 276H248.059M198.647 276V321.833M248.059 276H297.471M248.059 276V321.833M297.471 276H346.882M297.471 276V321.833M346.882 276H396.294M346.882 276V321.833M396.294 276H445.706M396.294 276V321.833M445.706 276H495.118M445.706 276V321.833M495.118 276H544.529M495.118 276V321.833M544.529 276H593.941M544.529 276V321.833M593.941 276H643.353M593.941 276V321.833M643.353 276H692.765M643.353 276V321.833M692.765 276H742.177M692.765 276V321.833M742.177 276H791.588M742.177 276V321.833M791.588 276H841M791.588 276V321.833M841 276V321.833M50.4118 321.833H1M50.4118 321.833H99.8235M50.4118 321.833V367.667M1 321.833V367.667M99.8235 321.833H149.235M99.8235 321.833V367.667M149.235 321.833H198.647M149.235 321.833V367.667M198.647 321.833H248.059M198.647 321.833V367.667M248.059 321.833H297.471M248.059 321.833V367.667M297.471 321.833H346.882M297.471 321.833V367.667M346.882 321.833H396.294M346.882 321.833V367.667M396.294 321.833H445.706M396.294 321.833V367.667M445.706 321.833H495.118M445.706 321.833V367.667M495.118 321.833H544.529M495.118 321.833V367.667M544.529 321.833H593.941M544.529 321.833V367.667M593.941 321.833H643.353M593.941 321.833V367.667M643.353 321.833H692.765M643.353 321.833V367.667M692.765 321.833H742.177M692.765 321.833V367.667M742.177 321.833H791.588M742.177 321.833V367.667M791.588 321.833H841M791.588 321.833V367.667M841 321.833V367.667M50.4118 367.667H1M50.4118 367.667H99.8235M50.4118 367.667V413.5M1 367.667V413.5M99.8235 367.667H149.235M99.8235 367.667V413.5M149.235 367.667H198.647M149.235 367.667V413.5M198.647 367.667H248.059M198.647 367.667V413.5M248.059 367.667H297.471M248.059 367.667V413.5M297.471 367.667H346.882M297.471 367.667V413.5M346.882 367.667H396.294M346.882 367.667V413.5M396.294 367.667H445.706M396.294 367.667V413.5M445.706 367.667H495.118M445.706 367.667V413.5M495.118 367.667H544.529M495.118 367.667V413.5M544.529 367.667H593.941M544.529 367.667V413.5M593.941 367.667H643.353M593.941 367.667V413.5M643.353 367.667H692.765M643.353 367.667V413.5M692.765 367.667H742.177M692.765 367.667V413.5M742.177 367.667H791.588M742.177 367.667V413.5M791.588 367.667H841M791.588 367.667V413.5M841 367.667V413.5M50.4118 413.5H1M50.4118 413.5H99.8235M50.4118 413.5V459.333M1 413.5V459.333M99.8235 413.5H149.235M99.8235 413.5V459.333M149.235 413.5H198.647M149.235 413.5V459.333M198.647 413.5H248.059M198.647 413.5V459.333M248.059 413.5H297.471M248.059 413.5V459.333M297.471 413.5H346.882M297.471 413.5V459.333M346.882 413.5H396.294M346.882 413.5V459.333M396.294 413.5H445.706M396.294 413.5V459.333M445.706 413.5H495.118M445.706 413.5V459.333M495.118 413.5H544.529M495.118 413.5V459.333M544.529 413.5H593.941M544.529 413.5V459.333M593.941 413.5H643.353M593.941 413.5V459.333M643.353 413.5H692.765M643.353 413.5V459.333M692.765 413.5H742.177M692.765 413.5V459.333M742.177 413.5H791.588M742.177 413.5V459.333M791.588 413.5H841M791.588 413.5V459.333M841 413.5V459.333M50.4118 459.333H1M50.4118 459.333H99.8235M50.4118 459.333V505.167M1 459.333V505.167M99.8235 459.333H149.235M99.8235 459.333V505.167M149.235 459.333H198.647M149.235 459.333V505.167M198.647 459.333H248.059M198.647 459.333V505.167M248.059 459.333H297.471M248.059 459.333V505.167M297.471 459.333H346.882M297.471 459.333V505.167M346.882 459.333H396.294M346.882 459.333V505.167M396.294 459.333H445.706M396.294 459.333V505.167M445.706 459.333H495.118M445.706 459.333V505.167M495.118 459.333H544.529M495.118 459.333V505.167M544.529 459.333H593.941M544.529 459.333V505.167M593.941 459.333H643.353M593.941 459.333V505.167M643.353 459.333H692.765M643.353 459.333V505.167M692.765 459.333H742.177M692.765 459.333V505.167M742.177 459.333H791.588M742.177 459.333V505.167M791.588 459.333H841M791.588 459.333V505.167M841 459.333V505.167M50.4118 505.167H1M50.4118 505.167H99.8235M50.4118 505.167V551M1 505.167V551H50.4118M99.8235 505.167H149.235M99.8235 505.167V551M149.235 505.167H198.647M149.235 505.167V551M198.647 505.167H248.059M198.647 505.167V551M248.059 505.167H297.471M248.059 505.167V551M297.471 505.167H346.882M297.471 505.167V551M346.882 505.167H396.294M346.882 505.167V551M396.294 505.167H445.706M396.294 505.167V551M445.706 505.167H495.118M445.706 505.167V551M495.118 505.167H544.529M495.118 505.167V551M544.529 505.167H593.941M544.529 505.167V551M593.941 505.167H643.353M593.941 505.167V551M643.353 505.167H692.765M643.353 505.167V551M692.765 505.167H742.177M692.765 505.167V551M742.177 505.167H791.588M742.177 505.167V551M791.588 505.167H841M791.588 505.167V551M841 505.167V551H791.588M50.4118 551H99.8235M99.8235 551H149.235M149.235 551H198.647M198.647 551H248.059M248.059 551H297.471M297.471 551H346.882M346.882 551H396.294M396.294 551H445.706M445.706 551H495.118M495.118 551H544.529M544.529 551H593.941M593.941 551H643.353M643.353 551H692.765M692.765 551H742.177M742.177 551H791.588"
                       stroke="url(#paint0_radial_2_550) #fff"
                       strokeOpacity="0.08"
-                      strokeWidth="1"
+                      strokeWidth="3"
                     />
                     <defs>
                       <radialGradient
@@ -157,21 +158,193 @@ export default function ContentLayout() {
       </section>
       <section className="mt-[17px]">
         <div className="bg-[#48D64C] px-[72px] py-[132px]">
-          <p className="text-[128px] font-[400] leading-normal text-[#070606]">
+          <p className="text-[128px] font-[400] leading-none text-[#070606]">
             Smart investments, <br />
             secure payments, <br />
-            and expert guidance, all <br />
-            in one place.
+            and expert guidance, all in one place.
           </p>
         </div>
-        <div>
-            <Header 
-                title={'Confidently Shape Your Financial Future'}
-                text={'At RAFT, we empower you to confidently shape your financial future.Our modern approach simplifies saving and investing, making it easier than ever.'}
-                textClass={'text-start'}
-                t={''}
-            />
+        <div className="mt-[124px] ml-[84px]">
+          <Header
+            title={"Confidently Shape Your Financial Future"}
+            text={
+              "At RAFT, we empower you to confidently shape your financial future.Our modern approach simplifies saving and investing, making it easier than ever."
+            }
+            textClass={"text-start"}
+            t={""}
+          />
         </div>
+        <div className="w-[1296px] flex gap-[56px] mx-auto mt-[72px]">
+          <Cards
+            image={moneySend}
+            title={"Spend better"}
+            text={
+              "Set and achieve financial goals with ease, automate your savings, and watch your money grow without the stress."
+            }
+          />
+          <Cards
+            image={walletMinus}
+            title={"Invest better"}
+            text={
+              "Set and achieve financial goals with ease, automate your savings, and watch your money grow without the stress."
+            }
+          />
+        </div>
+        <div className="flex justify-between w-[1296px] mx-auto my-[100px]">
+          <div className="flex flex-col gap-[16px] items-center">
+            <p className="text-[80px] font-[590] leading-none text-[#fff]">
+              50+
+            </p>
+            <p className="text-[18px] font-[510] leading-none text-[#BDBDBD]">
+              CITIES
+            </p>
+          </div>
+          <div className="flex flex-col gap-[16px] items-center">
+            <p className="text-[80px] font-[590] leading-none text-[#fff]">
+              50,000+
+            </p>
+            <p className="text-[18px] font-[510] leading-none text-[#BDBDBD] uppercase">
+              Transactions
+            </p>
+          </div>
+          <div className="flex flex-col gap-[16px] items-center">
+            <p className="text-[80px] font-[590] leading-none text-[#fff]">
+              3M+
+            </p>
+            <p className="text-[18px] font-[510] leading-none text-[#BDBDBD] uppercase">
+              Users
+            </p>
+          </div>
+          <div className="flex flex-col gap-[16px] items-center">
+            <p className="text-[80px] font-[590] leading-none text-[#fff]">5</p>
+            <p className="text-[18px] font-[510] leading-none text-[#BDBDBD] uppercase">
+              User Ratings
+            </p>
+          </div>
+        </div>
+        <div>
+          <img src={framesix} alt="people" className="w-full" />
+        </div>
+      </section>
+      <section className="mt-[120px]">
+        <div className="w-[896px] flex flex-col gap-[16px] mx-auto">
+          <p className="text-[#48D64C] text-[18px] font-[510] text-center">
+            INTRODUCING
+          </p>
+          <Header
+            title={"Introducing RAFT's Next-Gen Cards"}
+            text={
+              "Discover RAFT's latest innovation – our new cards. Elevate your banking experience with cutting-edge features, security, and unprecedented convenience."
+            }
+          />
+        </div>
+        <div className="mt-[118px] mb-[123px]">
+          <img src={customATM} alt="atm" className="mx-auto" />
+        </div>
+        <div className="mt-[171px] mb-[113px]">
+          <div className="w-[1296px] flex gap-[24px] mx-auto">
+            {data2.map((item) => (
+              <Offers key={item.icon} {...item} />
+            ))}
+          </div>
+        </div>
+        <div className="px-[72px] pt-[100px] pb-[68px] bg-[#48D64C] flex flex-col gap-[104px]">
+          <p className="text-center text-[76px] font-normal leading-normal text-[#070606]">
+            Join over 3 million members
+          </p>
+          <div className="flex flex-col gap-[40px]">
+            <div className="flex gap-[24px]">
+              <div className="w-[416px] h-[408px] flex flex-col py-[24px] px-[32px] items-start gap-[24px] border-l-2 border-solid border-[#070606]">
+                <p className="text-[24px] font-normal leading-[32px] text-[#292929]">
+                  RAFT has transformed my approach to finance. Their smart
+                  investing options have helped me grow my wealth, and their
+                  user-friendly platform makes managing my money a breeze. I've
+                  never felt more confident about my financial future.
+                </p>
+                <div className="flex h-[80px] items-center w-[352px] justify-between">
+                  <div className="flex flex-col gap-[8px]">
+                    <p className="text-[24px] font-[510] text-[#070606] leading-[24px]">
+                      Robert Fox
+                    </p>
+                    <p className="text-[14px] font-normal leading-normal text-[#292929]">
+                      Happy RAFT User
+                    </p>
+                  </div>
+                  <img
+                    src={framethree}
+                    alt="user"
+                    className="w-[80px] h-[80px]"
+                  />
+                </div>
+              </div>
+              <div className="w-[416px] flex flex-col py-[24px] px-[32px] items-start gap-[24px] border-l-2 border-solid border-[#070606]">
+                <p className="text-[24px] font-normal leading-[32px] text-[#292929]">
+                  I can't express how grateful I am to RAFT. Their wealth
+                  management services have been a game-changer for my family's
+                  financial security. The expert guidance and personalized
+                  strategies have given us peace of mind, knowing that our
+                  future is in capable hands.
+                </p>
+                <div className="flex h-[80px] items-center w-[352px] justify-between">
+                  <div className="flex flex-col gap-[8px]">
+                    <p className="text-[24px] font-[510] text-[#070606] leading-[24px]">
+                      Cameron Williamson
+                    </p>
+                    <p className="text-[14px] font-normal leading-normal text-[#292929]">
+                      Happy RAFT User
+                    </p>
+                  </div>
+                  <img
+                    src={framefour}
+                    alt="user"
+                    className="w-[80px] h-[80px]"
+                  />
+                </div>
+              </div>
+              <div className="w-[416px] flex flex-col py-[24px] px-[32px] items-start gap-[24px] border-l-2 border-solid border-[#070606]">
+                <p className="text-[24px] font-normal leading-[32px] text-[#292929]">
+                  RAFT's financial planning services have been a lifeline for
+                  me. I always struggled with managing my money, but their team
+                  crafted a tailored plan that addressed my goals and concerns.
+                  It's been a game-changer in achieving my financial dreams
+                </p>
+                <div className="flex h-[80px] items-center w-[352px] justify-between">
+                  <div className="flex flex-col gap-[8px]">
+                    <p className="text-[24px] font-[510] text-[#070606] leading-[24px]">
+                      Esther Howard
+                    </p>
+                    <p className="text-[14px] font-normal leading-normal text-[#292929]">
+                      Happy RAFT User
+                    </p>
+                  </div>
+                  <img
+                    src={framefive}
+                    alt="user"
+                    className="w-[80px] h-[80px]"
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="flex gap-[16px] self-end">
+              <button className="flex justify-center items-center w-[60px] h-[60px] bg-[#FFF] p-[18px] border-[#000] rounded-full border-solid border-[1px]">
+                <img src={arrowsmallleft} alt="left button" />
+              </button>
+              <button className="flex justify-center items-center w-[60px] h-[60px] bg-[#FFF] p-[18px] border-[#000] rounded-full border-solid border-[1px] ">
+                <img src={arrowsmallright} alt="right button" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div className="mt-[124px] ml-[84px]">
+          <Header
+            title={"Frequently asked questions"}
+            textClass={"text-start"}
+            t={""}
+          />
+        </div>
+        <Accordion />
       </section>
     </>
   );
@@ -179,11 +352,23 @@ export default function ContentLayout() {
 
 function Header({ title, text, textClass, t }) {
   return (
-    <div className={`flex flex-col ${t || 'items-center'} gap-[24px] w-[896px] ${t??'mx-auto'}`}>
-      <p className={`text-[76px] text-[#ffffff] ${textClass??'text-center'} font-[400] leading-tight`}>
+    <div
+      className={`flex flex-col ${t ?? "items-center"} gap-[24px] w-[896px] ${
+        t ?? "mx-auto"
+      }`}
+    >
+      <p
+        className={`text-[76px] text-[#ffffff] ${
+          textClass || "text-center"
+        } font-[400] leading-tight`}
+      >
         {title}
       </p>
-      <p className={`text-[#989898] text-[20px] w-[668px] ${textClass||'text-center'} leading-[28px] font-[400]`}>
+      <p
+        className={`text-[#989898] text-[20px] w-[668px] ${
+          textClass || "text-center"
+        } leading-[28px] font-[400]`}
+      >
         {text}
       </p>
     </div>
@@ -324,18 +509,86 @@ const data = [
     text: "Seamlessly transfer funds without the extra cost. Send and receive money with zero bank transfer fees.",
   },
 ];
+
+const data2 = [
+  {
+    icon: docLogo,
+    title: "Contactless Technology",
+    text: "Our new cards come equipped with contactless technology, allowing you to make swift, secure payments with a simple tap.",
+  },
+  {
+    icon: identification,
+    title: "Personalization",
+    text: "Customize your card to reflect your unique style. Choose from a range of designs that suit your personality.",
+  },
+  {
+    icon: locklogo,
+    title: "Enhanced Security",
+    text: "Your peace of mind is our priority. Our cards feature advanced security measures to protect your transactions and data.",
+  },
+];
+
 function Offers({ icon, title, text }) {
   return (
     <div className="w-[416px] flex flex-col gap-[10px]">
       <div className="flex gap-[8px] items-center">
         <img src={icon} alt="" className="w-[24px] h-[24px]" />
-        <h3 className="text-[24px] font-[510] leading-normal text-[#fff]">
+        <h3 className="text-[24px] font-[510] leading-none text-[#fff]">
           {title}
         </h3>
       </div>
       <p className="text-[16px] font-[400] leading-[24px] text-[#bdbdbd]">
         {text}
       </p>
+    </div>
+  );
+}
+
+function Cards({ image, title, text }) {
+  return (
+    <div className="relative flex flex-col w-[620px] h-[670px] p-[52px] gap-[124px] custom">
+      <div className="w-[516px] flex flex-col gap-[16px]">
+        <h3 className="text-[32px] font-[510] leading-[28px] text-[#fff]">
+          {title}
+        </h3>
+        <p className="text-[20px] font-[400] leading-[28px] text-[#BDBDBD]">
+          {text}
+        </p>
+      </div>
+      <img
+        src={image}
+        alt="money send"
+        className="w-[200px] h-[200px] self-center z-10"
+      />
+      <div className="absolute top-[200px] left-0 w-[570px] h-[392px] z-0">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="601"
+          height="395"
+          viewBox="0 0 601 395"
+          fill="none"
+        >
+          <path
+            d="M36.2941 1H1V33.7381M36.2941 1V33.7381M36.2941 1H71.5882M36.2941 33.7381H1M36.2941 33.7381H71.5882M36.2941 33.7381V66.4762M1 33.7381V66.4762M71.5882 1V33.7381M71.5882 1H106.882M71.5882 33.7381H106.882M71.5882 33.7381V66.4762M106.882 1V33.7381M106.882 1H142.176M106.882 33.7381H142.176M106.882 33.7381V66.4762M142.176 1V33.7381M142.176 1H177.471M142.176 33.7381H177.471M142.176 33.7381V66.4762M177.471 1V33.7381M177.471 1H212.765M177.471 33.7381H212.765M177.471 33.7381V66.4762M212.765 1V33.7381M212.765 1H248.059M212.765 33.7381H248.059M212.765 33.7381V66.4762M248.059 1V33.7381M248.059 1H283.353M248.059 33.7381H283.353M248.059 33.7381V66.4762M283.353 1V33.7381M283.353 1H318.647M283.353 33.7381H318.647M283.353 33.7381V66.4762M318.647 1V33.7381M318.647 1H353.941M318.647 33.7381H353.941M318.647 33.7381V66.4762M353.941 1V33.7381M353.941 1H389.235M353.941 33.7381H389.235M353.941 33.7381V66.4762M389.235 1V33.7381M389.235 1H424.529M389.235 33.7381H424.529M389.235 33.7381V66.4762M424.529 1V33.7381M424.529 1H459.824M424.529 33.7381H459.824M424.529 33.7381V66.4762M459.824 1V33.7381M459.824 1H495.118M459.824 33.7381H495.118M459.824 33.7381V66.4762M495.118 1V33.7381M495.118 1H530.412M495.118 33.7381H530.412M495.118 33.7381V66.4762M530.412 1V33.7381M530.412 1H565.706M530.412 33.7381H565.706M530.412 33.7381V66.4762M565.706 1V33.7381M565.706 1H601V33.7381M565.706 33.7381H601M565.706 33.7381V66.4762M601 33.7381V66.4762M36.2941 66.4762H1M36.2941 66.4762H71.5882M36.2941 66.4762V99.2143M1 66.4762V99.2143M71.5882 66.4762H106.882M71.5882 66.4762V99.2143M106.882 66.4762H142.176M106.882 66.4762V99.2143M142.176 66.4762H177.471M142.176 66.4762V99.2143M177.471 66.4762H212.765M177.471 66.4762V99.2143M212.765 66.4762H248.059M212.765 66.4762V99.2143M248.059 66.4762H283.353M248.059 66.4762V99.2143M283.353 66.4762H318.647M283.353 66.4762V99.2143M318.647 66.4762H353.941M318.647 66.4762V99.2143M353.941 66.4762H389.235M353.941 66.4762V99.2143M389.235 66.4762H424.529M389.235 66.4762V99.2143M424.529 66.4762H459.824M424.529 66.4762V99.2143M459.824 66.4762H495.118M459.824 66.4762V99.2143M495.118 66.4762H530.412M495.118 66.4762V99.2143M530.412 66.4762H565.706M530.412 66.4762V99.2143M565.706 66.4762H601M565.706 66.4762V99.2143M601 66.4762V99.2143M36.2941 99.2143H1M36.2941 99.2143H71.5882M36.2941 99.2143V131.952M1 99.2143V131.952M71.5882 99.2143H106.882M71.5882 99.2143V131.952M106.882 99.2143H142.176M106.882 99.2143V131.952M142.176 99.2143H177.471M142.176 99.2143V131.952M177.471 99.2143H212.765M177.471 99.2143V131.952M212.765 99.2143H248.059M212.765 99.2143V131.952M248.059 99.2143H283.353M248.059 99.2143V131.952M283.353 99.2143H318.647M283.353 99.2143V131.952M318.647 99.2143H353.941M318.647 99.2143V131.952M353.941 99.2143H389.235M353.941 99.2143V131.952M389.235 99.2143H424.529M389.235 99.2143V131.952M424.529 99.2143H459.824M424.529 99.2143V131.952M459.824 99.2143H495.118M459.824 99.2143V131.952M495.118 99.2143H530.412M495.118 99.2143V131.952M530.412 99.2143H565.706M530.412 99.2143V131.952M565.706 99.2143H601M565.706 99.2143V131.952M601 99.2143V131.952M36.2941 131.952H1M36.2941 131.952H71.5882M36.2941 131.952V164.69M1 131.952V164.69M71.5882 131.952H106.882M71.5882 131.952V164.69M106.882 131.952H142.176M106.882 131.952V164.69M142.176 131.952H177.471M142.176 131.952V164.69M177.471 131.952H212.765M177.471 131.952V164.69M212.765 131.952H248.059M212.765 131.952V164.69M248.059 131.952H283.353M248.059 131.952V164.69M283.353 131.952H318.647M283.353 131.952V164.69M318.647 131.952H353.941M318.647 131.952V164.69M353.941 131.952H389.235M353.941 131.952V164.69M389.235 131.952H424.529M389.235 131.952V164.69M424.529 131.952H459.824M424.529 131.952V164.69M459.824 131.952H495.118M459.824 131.952V164.69M495.118 131.952H530.412M495.118 131.952V164.69M530.412 131.952H565.706M530.412 131.952V164.69M565.706 131.952H601M565.706 131.952V164.69M601 131.952V164.69M36.2941 164.69H1M36.2941 164.69H71.5882M36.2941 164.69V197.429M1 164.69V197.429M71.5882 164.69H106.882M71.5882 164.69V197.429M106.882 164.69H142.176M106.882 164.69V197.429M142.176 164.69H177.471M142.176 164.69V197.429M177.471 164.69H212.765M177.471 164.69V197.429M212.765 164.69H248.059M212.765 164.69V197.429M248.059 164.69H283.353M248.059 164.69V197.429M283.353 164.69H318.647M283.353 164.69V197.429M318.647 164.69H353.941M318.647 164.69V197.429M353.941 164.69H389.235M353.941 164.69V197.429M389.235 164.69H424.529M389.235 164.69V197.429M424.529 164.69H459.824M424.529 164.69V197.429M459.824 164.69H495.118M459.824 164.69V197.429M495.118 164.69H530.412M495.118 164.69V197.429M530.412 164.69H565.706M530.412 164.69V197.429M565.706 164.69H601M565.706 164.69V197.429M601 164.69V197.429M36.2941 197.429H1M36.2941 197.429H71.5882M36.2941 197.429V230.167M1 197.429V230.167M71.5882 197.429H106.882M71.5882 197.429V230.167M106.882 197.429H142.176M106.882 197.429V230.167M142.176 197.429H177.471M142.176 197.429V230.167M177.471 197.429H212.765M177.471 197.429V230.167M212.765 197.429H248.059M212.765 197.429V230.167M248.059 197.429H283.353M248.059 197.429V230.167M283.353 197.429H318.647M283.353 197.429V230.167M318.647 197.429H353.941M318.647 197.429V230.167M353.941 197.429H389.235M353.941 197.429V230.167M389.235 197.429H424.529M389.235 197.429V230.167M424.529 197.429H459.824M424.529 197.429V230.167M459.824 197.429H495.118M459.824 197.429V230.167M495.118 197.429H530.412M495.118 197.429V230.167M530.412 197.429H565.706M530.412 197.429V230.167M565.706 197.429H601M565.706 197.429V230.167M601 197.429V230.167M36.2941 230.167H1M36.2941 230.167H71.5882M36.2941 230.167V262.905M1 230.167V262.905M71.5882 230.167H106.882M71.5882 230.167V262.905M106.882 230.167H142.176M106.882 230.167V262.905M142.176 230.167H177.471M142.176 230.167V262.905M177.471 230.167H212.765M177.471 230.167V262.905M212.765 230.167H248.059M212.765 230.167V262.905M248.059 230.167H283.353M248.059 230.167V262.905M283.353 230.167H318.647M283.353 230.167V262.905M318.647 230.167H353.941M318.647 230.167V262.905M353.941 230.167H389.235M353.941 230.167V262.905M389.235 230.167H424.529M389.235 230.167V262.905M424.529 230.167H459.824M424.529 230.167V262.905M459.824 230.167H495.118M459.824 230.167V262.905M495.118 230.167H530.412M495.118 230.167V262.905M530.412 230.167H565.706M530.412 230.167V262.905M565.706 230.167H601M565.706 230.167V262.905M601 230.167V262.905M36.2941 262.905H1M36.2941 262.905H71.5882M36.2941 262.905V295.643M1 262.905V295.643M71.5882 262.905H106.882M71.5882 262.905V295.643M106.882 262.905H142.176M106.882 262.905V295.643M142.176 262.905H177.471M142.176 262.905V295.643M177.471 262.905H212.765M177.471 262.905V295.643M212.765 262.905H248.059M212.765 262.905V295.643M248.059 262.905H283.353M248.059 262.905V295.643M283.353 262.905H318.647M283.353 262.905V295.643M318.647 262.905H353.941M318.647 262.905V295.643M353.941 262.905H389.235M353.941 262.905V295.643M389.235 262.905H424.529M389.235 262.905V295.643M424.529 262.905H459.824M424.529 262.905V295.643M459.824 262.905H495.118M459.824 262.905V295.643M495.118 262.905H530.412M495.118 262.905V295.643M530.412 262.905H565.706M530.412 262.905V295.643M565.706 262.905H601M565.706 262.905V295.643M601 262.905V295.643M36.2941 295.643H1M36.2941 295.643H71.5882M36.2941 295.643V328.381M1 295.643V328.381M71.5882 295.643H106.882M71.5882 295.643V328.381M106.882 295.643H142.176M106.882 295.643V328.381M142.176 295.643H177.471M142.176 295.643V328.381M177.471 295.643H212.765M177.471 295.643V328.381M212.765 295.643H248.059M212.765 295.643V328.381M248.059 295.643H283.353M248.059 295.643V328.381M283.353 295.643H318.647M283.353 295.643V328.381M318.647 295.643H353.941M318.647 295.643V328.381M353.941 295.643H389.235M353.941 295.643V328.381M389.235 295.643H424.529M389.235 295.643V328.381M424.529 295.643H459.824M424.529 295.643V328.381M459.824 295.643H495.118M459.824 295.643V328.381M495.118 295.643H530.412M495.118 295.643V328.381M530.412 295.643H565.706M530.412 295.643V328.381M565.706 295.643H601M565.706 295.643V328.381M601 295.643V328.381M36.2941 328.381H1M36.2941 328.381H71.5882M36.2941 328.381V361.119M1 328.381V361.119M71.5882 328.381H106.882M71.5882 328.381V361.119M106.882 328.381H142.176M106.882 328.381V361.119M142.176 328.381H177.471M142.176 328.381V361.119M177.471 328.381H212.765M177.471 328.381V361.119M212.765 328.381H248.059M212.765 328.381V361.119M248.059 328.381H283.353M248.059 328.381V361.119M283.353 328.381H318.647M283.353 328.381V361.119M318.647 328.381H353.941M318.647 328.381V361.119M353.941 328.381H389.235M353.941 328.381V361.119M389.235 328.381H424.529M389.235 328.381V361.119M424.529 328.381H459.824M424.529 328.381V361.119M459.824 328.381H495.118M459.824 328.381V361.119M495.118 328.381H530.412M495.118 328.381V361.119M530.412 328.381H565.706M530.412 328.381V361.119M565.706 328.381H601M565.706 328.381V361.119M601 328.381V361.119M36.2941 361.119H1M36.2941 361.119H71.5882M36.2941 361.119V393.857M1 361.119V393.857H36.2941M71.5882 361.119H106.882M71.5882 361.119V393.857M106.882 361.119H142.176M106.882 361.119V393.857M142.176 361.119H177.471M142.176 361.119V393.857M177.471 361.119H212.765M177.471 361.119V393.857M212.765 361.119H248.059M212.765 361.119V393.857M248.059 361.119H283.353M248.059 361.119V393.857M283.353 361.119H318.647M283.353 361.119V393.857M318.647 361.119H353.941M318.647 361.119V393.857M353.941 361.119H389.235M353.941 361.119V393.857M389.235 361.119H424.529M389.235 361.119V393.857M424.529 361.119H459.824M424.529 361.119V393.857M459.824 361.119H495.118M459.824 361.119V393.857M495.118 361.119H530.412M495.118 361.119V393.857M530.412 361.119H565.706M530.412 361.119V393.857M565.706 361.119H601M565.706 361.119V393.857M601 361.119V393.857H565.706M36.2941 393.857H71.5882M71.5882 393.857H106.882M106.882 393.857H142.176M142.176 393.857H177.471M177.471 393.857H212.765M212.765 393.857H248.059M248.059 393.857H283.353M283.353 393.857H318.647M318.647 393.857H353.941M353.941 393.857H389.235M389.235 393.857H424.529M424.529 393.857H459.824M459.824 393.857H495.118M495.118 393.857H530.412M530.412 393.857H565.706"
+            stroke="url(#paint0_radial_2_593) #fff"
+            strokeOpacity="0.08"
+            strokeWidth={1.5}
+          />
+          <defs>
+            <radialGradient
+              id="paint0_radial_2_593"
+              cx="0"
+              cy="0"
+              r="1"
+              gradientUnits="userSpaceOnUse"
+              gradientTransform="translate(301 207.922) rotate(90) scale(185.516 300.453)"
+            >
+              <stop stopColor="white" />
+              <stop offset="1" stopColor="white" stopOpacity="0" />
+            </radialGradient>
+          </defs>
+        </svg>
+      </div>
     </div>
   );
 }
