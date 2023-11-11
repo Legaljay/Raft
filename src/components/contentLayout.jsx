@@ -27,7 +27,6 @@ import group8 from "../assets/Group 8.svg";
 import banknotes from "../assets/svg/banknotes.svg";
 import circlestack from "../assets/svg/circle-stack.png";
 import arowleftright from "../assets/svg/arrows-right-left.svg";
-import TextExpander from "./Accordion";
 import Accordion from "./Accordion";
 
 export default function ContentLayout() {
@@ -124,10 +123,6 @@ export default function ContentLayout() {
           </div>
         </div>
       </section>
-      {/* <div className="mt-[50px] ">
-                    <h1 className="text-[76px] text-[#ffffff]">Elevate Your Financial Journey with RAFT</h1>
-                    <p className="text-[#989898] text-[20px]">RAFT offers a world of financial possibilities. From investments to payments, we've got you covered. Join us and unlock your financial potential today.</p>
-                </div> */}
       <section className="mt-[192px]">
         <Header
           title={"Elevate Your Financial Journey with RAFT"}
@@ -253,7 +248,7 @@ export default function ContentLayout() {
             Join over 3 million members
           </p>
           <div className="flex flex-col gap-[40px]">
-            <div className="flex gap-[24px]">
+            <div className="flex gap-[24px] mx-auto">
               <div className="w-[416px] h-[408px] flex flex-col py-[24px] px-[32px] items-start gap-[24px] border-l-2 border-solid border-[#070606]">
                 <p className="text-[24px] font-normal leading-[32px] text-[#292929]">
                   RAFT has transformed my approach to finance. Their smart

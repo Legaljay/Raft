@@ -25,7 +25,7 @@ const data =[
 export default function Accordion() {
   const [currOpen, setCurrOpen] = useState(null)
   return (
-    <div className="w-[1296px] mx-auto mt-[100px]">
+    <div className="w-[1296px] mx-auto mt-[100px] flex flex-col gap-[24px]">
       {data.map((el, index) => 
       <AccordionItem
         key={el.title}
