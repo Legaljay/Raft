@@ -29,8 +29,8 @@ import circlestack from "../assets/svg/circle-stack.png";
 import arowleftright from "../assets/svg/arrows-right-left.svg";
 import Accordion from "./Accordion";
 import Swipe, { SwiperNavButtons } from "./swipe";
-import {Swiper} from "swiper/react";
-import {A11y, Navigation, Pagination } from "swiper/modules";
+import { Swiper } from "swiper/react";
+import { A11y, Navigation, Pagination } from "swiper/modules";
 
 export default function ContentLayout() {
   return (
@@ -67,7 +67,8 @@ export default function ContentLayout() {
                   empower your financial journey.
                 </p>
                 <div className="absolute top-0 left-0 z-0">
-                  <svg className="w-[342px] md:w-[500px] lg:w-[842px] h-[340px] md:h-[450px] lg:h-[552px]"
+                  <svg
+                    className="w-[342px] md:w-[500px] lg:w-[842px] h-[340px] md:h-[450px] lg:h-[552px]"
                     xmlns="http://www.w3.org/2000/svg"
                     width="842"
                     height="552"
@@ -113,11 +114,23 @@ export default function ContentLayout() {
               FEATURED AND SEEN IN
             </p>
             <div className="flex gap-[23px] lg:gap-[80px] w-[342px] md:w-[500px] lg:w-[860px]">
-              <img src={Forbes} alt="forbes logo" className="w-[50px]"/>
-              <img src={CNBC} alt="cnbc logo" className="w-[50px]"/>
-              <img src={Bloomberg} alt="bloomberg logo" className="w-[50px]"/>
-              <img src={reuterLogo} alt="reuter logo" className="w-[50px]" />
-              <img src={CNN} alt="cnn logo" className="w-[50px]"/>
+              <img
+                src={Forbes}
+                alt="forbes logo"
+                className="w-[50px] md:w-full"
+              />
+              <img src={CNBC} alt="cnbc logo" className="w-[50px] md:w-full" />
+              <img
+                src={Bloomberg}
+                alt="bloomberg logo"
+                className="w-[50px] md:w-full"
+              />
+              <img
+                src={reuterLogo}
+                alt="reuter logo"
+                className="w-[50px] md:w-full"
+              />
+              <img src={CNN} alt="cnn logo" className="w-[50px] md:w-full" />
             </div>
             {/* <Header 
                     title={'Elevate Your Financial Journey with RAFT'}
@@ -214,7 +227,9 @@ export default function ContentLayout() {
             </p>
           </div>
           <div className="flex flex-col gap-[16px] items-center">
-            <p className="text-[20px] lg:text-[80px] font-[590] leading-none text-[#fff]">5</p>
+            <p className="text-[20px] lg:text-[80px] font-[590] leading-none text-[#fff]">
+              5
+            </p>
             <p className="text-[12px] lg:text-[18px] font-[510] leading-none text-[#BDBDBD] uppercase">
               User Ratings
             </p>
@@ -251,7 +266,7 @@ export default function ContentLayout() {
             Join over 3 million members
           </p>
           <div className="flex flex-col gap-[40px]">
-          {/* <Swiper
+            {/* <Swiper
             modules={[Navigation, Pagination, A11y]}
             spaceBetween={30}
             slidesPerView={1}
@@ -342,7 +357,7 @@ export default function ContentLayout() {
                   />
                 </div>
               </div> */}
-              <Swipe/>
+              <Swipe />
             </div>
             {/* <div className="flex gap-[16px] self-end">
               <button className="flex justify-center items-center w-[60px] h-[60px] bg-[#FFF] p-[18px] border-[#000] rounded-full border-solid border-[1px]">
@@ -353,7 +368,7 @@ export default function ContentLayout() {
               </button>
             </div> */}
             {/* <SwiperNavButtons/> */}
-          {/* </Swiper> */}
+            {/* </Swiper> */}
           </div>
         </div>
       </section>
@@ -374,9 +389,9 @@ export default function ContentLayout() {
 function Header({ title, text, textClass, t }) {
   return (
     <div
-      className={`flex flex-col ${t ?? "items-center"} gap-[24px] w-[342px] lg:w-[896px] ${
-        t ?? "mx-auto"
-      }`}
+      className={`flex flex-col ${
+        t ?? "items-center"
+      } gap-[24px] w-[342px] lg:w-[896px] ${t ?? "mx-auto"}`}
     >
       <p
         className={`text-[36px] lg:text-[76px] text-[#ffffff] ${
@@ -401,7 +416,11 @@ function GridMages() {
     <div className="flex flex-wrap mt-[80px] gap-y-[32px] lg:gap-y-8">
       <div className="flex flex-wrap justify-between text-white gap-[32px] lg:gap-1 mx-auto w-[342px] lg:w-[1296px]">
         <div className="relative custom rounded-[12px] w-[342px] lg:w-[822px] h-[395px] lg:h-[500px] flex flex-col gap-1 justify-around items-center">
-          <img src={frame112} alt="Elev" className="w-[294px] lg:w-[478px] h-[154px] lg:h-[236px] z-10" />
+          <img
+            src={frame112}
+            alt="Elev"
+            className="w-[294px] lg:w-[478px] h-[154px] lg:h-[236px] z-10"
+          />
           <div className="self-start ml-[40px] flex flex-col gap-[16px] w-[294px] lg:w-[516px]">
             <h1 className="text-[#fff] text-[24px] lg:text-[32px] font-[510] leading-[28px]">
               Seamless Payments
@@ -483,7 +502,8 @@ function GridMages() {
 
 function Strokes({ width }) {
   return (
-    <svg className="w-[342px] lg:w-[400px]"
+    <svg
+      className="w-[342px] lg:w-[400px]"
       xmlns="http://www.w3.org/2000/svg"
       width={width || "810"}
       height="349"
@@ -565,7 +585,7 @@ function Offers({ icon, title, text }) {
   );
 }
 
-function Cards({ image, title, text }) { 
+function Cards({ image, title, text }) {
   return (
     <div className="relative flex flex-col w-[342px] lg:w-[620px] h-[440px] lg:h-[670px] p-[24px] lg:p-[52px] md:gap-[76px] lg:gap-[124px] custom">
       <div className="w-[294px] lg:w-[516px] flex flex-col gap-[16px]">
@@ -582,7 +602,8 @@ function Cards({ image, title, text }) {
         className="md:w-[120px] lg:w-[200px] md:h-[120px] lg:h-[200px] self-center z-10"
       />
       <div className="absolute md:top-20px lg:top-[200px] left-0 w-[340px] lg:w-[570px] h-[244px] lg:h-[392px] z-0">
-        <svg className="w-[340px] lg:w-[601px] h-[244px] lg:h-[392px]"
+        <svg
+          className="w-[340px] lg:w-[601px] h-[244px] lg:h-[392px]"
           xmlns="http://www.w3.org/2000/svg"
           width="601"
           height="395"

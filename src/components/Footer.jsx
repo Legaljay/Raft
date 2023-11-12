@@ -62,15 +62,15 @@ export const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="flex justify-between mb-[56px]">
-          <select name="country" id="" className="bg-[#000] text-[#fff] outline-none text-[24px] font-normal leading-normal">
+        <div className="flex justify-between mb-[52px] md:mb-[56px]">
+          <select name="country" id="" className="bg-[#000] text-[#fff] outline-none text-[14px] md:text-[24px] font-normal leading-normal">
             <option value="English (United Kingdom)" className="bg-[#000] text-[#fff]">
               English (United Kingdom)
             </option>
           </select>
           <div className="flex items-center justify-center">
             <img src={Copy} alt="copyright"/>
-            <p className="font-normal text-[16px] leading-normal text-[#fff]">
+            <p className="font-normal text-[14px] md:text-[16px] leading-normal text-[#fff]">
               Raft Corp, LLC.
             </p>
           </div>
