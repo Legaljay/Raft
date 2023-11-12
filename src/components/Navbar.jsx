@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 // import Raft from "../assets/Images/Raft.png";
 import Raft from "../assets/svg/import.svg";
 import {IoClose, IoMenu} from "react-icons/io5"
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 const navLinks = [
   {
@@ -34,6 +34,7 @@ const navLinks = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate()
   const headerRef= useRef(null)
 
   const handleStickyHeader = () => {
@@ -66,8 +67,8 @@ export default function Navbar() {
           <span className="">About</span>
         </div>
         <div className="text-[#ffffff] hidden md:flex justify-between items-center w-[162px] h-[35px]">
-          <button className="w-[40px] h-[19px]">Login</button>
-          <button className="w-[106px] h-[35px] rounded-[100px] bg-[#2B892E]">
+          <button className="w-[40px] h-[19px]" onClick={() => navigate('/login')}>Login</button>
+          <button className="w-[106px] h-[35px] rounded-[100px] bg-[#2B892E]" onClick={() => navigate('/signup')}>
             Get Started
           </button>
         </div>

@@ -1,7 +1,7 @@
 import {Routes, Route} from 'react-router-dom'
 import ContentLayout from '../components/contentLayout'
-import { Login } from '../components/Login'
-import Signup from '../components/Signup'
+import Login from '../components/Login'
+import {Signup} from '../components/Signup'
 
 const Routers = () => {
   return (

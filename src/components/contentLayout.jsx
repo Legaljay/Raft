@@ -1,9 +1,6 @@
 import People from "../assets/Images/people.png";
 import people from "../assets/Images/Frame 31.svg";
-import ArrowLeft from "../assets/Images/arrows-right-left.png";
-import Banknotes from "../assets/Images/banknotes.png";
 import Bloomberg from "../assets/Images/bloomberg-1.png";
-import circleStack from "../assets/Images/circle-stack.png";
 import CNBC from "../assets/Images/cnbc-1.png";
 import CNN from "../assets/Images/cnn-logo 1.png";
 import docLogo from "../assets/Images/document-duplicate.png";
@@ -15,12 +12,7 @@ import reuterLogo from "../assets/Images/reuters-2-1 1.png";
 import walletMinus from "../assets/Images/wallet-minus.png";
 import frameOne from "../assets/Frame94.svg";
 import customATM from "../assets/svg/atm.svg";
-import framethree from "../assets/Images/Frame 127.png";
-import framefour from "../assets/Images/Frame 130.png";
-import framefive from "../assets/Images/Frame 136.png";
 import framesix from "../assets/Images/Frame 150.png";
-import arrowsmallleft from "../assets/arrow-small-left.svg";
-import arrowsmallright from "../assets/arrow-small-right.svg";
 import frame106 from "../assets/Frame 106.svg";
 import frame112 from "../assets/Frame 112.svg";
 import group8 from "../assets/Group 8.svg";
@@ -28,9 +20,7 @@ import banknotes from "../assets/svg/banknotes.svg";
 import circlestack from "../assets/svg/circle-stack.png";
 import arowleftright from "../assets/svg/arrows-right-left.svg";
 import Accordion from "./Accordion";
-import Swipe, { SwiperNavButtons } from "./swipe";
-import { Swiper } from "swiper/react";
-import { A11y, Navigation, Pagination } from "swiper/modules";
+import Swipe from "./swipe";
 import { useNavigate } from "react-router-dom";
 
 export default function ContentLayout() {
