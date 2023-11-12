@@ -47,7 +47,7 @@ AccordionItem.propTypes = {
   num: PropTypes.number,
   title: PropTypes.string,
   text: PropTypes.string,
-  currOpen: PropTypes.bool,
+  currOpen: PropTypes.number,
   onOpen: PropTypes.func.isRequired,
   children: PropTypes.string,
 };
