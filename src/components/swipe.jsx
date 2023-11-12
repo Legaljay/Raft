@@ -121,7 +121,7 @@ export const SwiperNavButtons = () => {
     return (
         <div className="flex gap-[16px] self-end">
             <button 
-                className="flex justify-center items-center w-[60px] h-[60px] bg-[#FFF] p-[18px] border-[#000] rounded-full border-solid border-[1px]"
+                className="flex justify-center items-center w-[40px] md:w-[60px] h-[40px] md:h-[60px] bg-[#FFF] p-[18px] border-[#000] rounded-full border-solid border-[1px]"
                 onClick={()=>swiper.slidePrev(500)}
                 type='button'
                 aria-label="prev slide"
@@ -129,7 +129,7 @@ export const SwiperNavButtons = () => {
             <img src={arrowsmallleft} alt="left button" />
             </button>
             <button 
-                className="flex justify-center items-center w-[60px] h-[60px] bg-[#FFF] p-[18px] border-[#000] rounded-full border-solid border-[1px]"
+                className="flex justify-center items-center w-[40px] md:w-[60px] h-[40px] md:h-[60px] bg-[#FFF] p-[18px] border-[#000] rounded-full border-solid border-[1px]"
                 onClick={()=>{swiper.slideNext(500, false)}}
                 type="button"
                 aria-label="next slide"
