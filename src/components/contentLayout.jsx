@@ -31,16 +31,18 @@ import Accordion from "./Accordion";
 import Swipe, { SwiperNavButtons } from "./swipe";
 import { Swiper } from "swiper/react";
 import { A11y, Navigation, Pagination } from "swiper/modules";
+import { useNavigate } from "react-router-dom";
 
 export default function ContentLayout() {
+  const navigate = useNavigate();
   return (
     <>
       <section className="bg-black">
         <div className="mt-[90px]">
           <div className="w-[342px] lg:w-[896px]  flex flex-col gap-[32px]  mx-auto justify-center items-center text-white">
             <div className="items-center flex-col flex gap-[16px] self-stretch">
-              <span className="flex justify-center items-center gap-[10px] px-[6px] py-[12px] w-[204px] h-[32px]  bg-white/20  rounded-[100px] text-center">
-                <span className="text-[16px] font-[400] text-[#DCDCDC] leading-none">
+              <span className="flex justify-center items-center gap-[10px] px-[6px] py-[12px] w-[204px] h-[32px]  bg-white/20  rounded-[100px] text md:text-center">
+                <span className="text-[14px] md:text-[16px] font-[400] text-[#DCDCDC] leading-none">
                   Introducing Raft Cards
                 </span>
                 <svg
@@ -98,14 +100,14 @@ export default function ContentLayout() {
                 </div>
               </div>
             </div>
-            <button className="bg-[#2b892E] rounded-[100px] w-[146px] px-[32px] py-[16px] z-10">
+            <button className="bg-[#2b892E] rounded-[100px] w-[146px] px-[32px] py-[16px] z-10 text-[14px] md:text-[16px]" onClick={() => navigate('/signup')}>
               Get Started
             </button>
           </div>
         </div>
-        <div className="mt-[132px] w-full">
+        <div className="mt-[56px] md:mt-[132px] w-full">
           <div className="">
-            <img className="w-[96%] mx-auto" src={People} alt="people" />
+            <img className="w-[96%] mx-auto h-[380px] md:h-auto object-cover rounded-[12px] md:rounded-none" src={People} alt="people" />
           </div>
         </div>
         <div className="flex items-center justify-center mt-[50px]">
@@ -113,29 +115,29 @@ export default function ContentLayout() {
             <p className="text-[#BDBDBD] text-[20px] font-[510]">
               FEATURED AND SEEN IN
             </p>
-            <div className="flex gap-[23px] lg:gap-[80px] w-[342px] md:w-[500px] lg:w-[860px]">
+            <div className="grid grid-flow-col place-items-center gap-[23px] lg:gap-[80px] w-[342px] md:w-[500px] lg:w-[860px]">
               <img
                 src={Forbes}
                 alt="forbes logo"
-                className="w-[50px] md:w-full"
+                // className="w-[50px] md:w-full"
               />
               <img src={CNBC} alt="cnbc logo" className="w-[50px] md:w-full" />
               <img
                 src={Bloomberg}
                 alt="bloomberg logo"
-                className="w-[50px] md:w-full"
+                // className="w-[50px] md:w-full"
               />
               <img
                 src={reuterLogo}
                 alt="reuter logo"
-                className="w-[50px] md:w-full"
+                // className="w-[50px] md:w-full"
               />
-              <img src={CNN} alt="cnn logo" className="w-[50px] md:w-full" />
+              <img 
+                src={CNN} 
+                alt="cnn logo" 
+                // className="w-[50px] md:w-full" 
+                />
             </div>
-            {/* <Header 
-                    title={'Elevate Your Financial Journey with RAFT'}
-                    text={"RAFT offers a world of financial possibilities. From investments to payments, we've got you covered. Join us and unlock your financial potential today."}
-                /> */}
           </div>
         </div>
       </section>
@@ -157,7 +159,7 @@ export default function ContentLayout() {
           }
         />
         <div className="mt-[124px]">
-          <img src={people} alt="people cash" className="w-[1296px] mx-auto" />
+          <img src={people} alt="people cash" className="w-[342px] md:w-[1296px] mx-auto h-[380px] md:h-auto object-cover rounded-[12px] md:rounded-none" />
         </div>
         <div className="mt-[56px] lg:mt-[171px]">
           <div className="w-[342px] lg:w-[1296px] flex flex-col lg:flex-row gap-[24px] mx-auto">
@@ -236,7 +238,7 @@ export default function ContentLayout() {
           </div>
         </div>
         <div>
-          <img src={framesix} alt="people" className="w-full" />
+          <img src={framesix} alt="people" className="w-full h-[500px] md:h-auto object-cover" />
         </div>
       </section>
       <section className="mt-[120px]">
@@ -266,26 +268,7 @@ export default function ContentLayout() {
             Join over 3 million members
           </p>
           <div className="flex flex-col gap-[40px]">
-            {/* <Swiper
-            modules={[Navigation, Pagination, A11y]}
-            spaceBetween={30}
-            slidesPerView={1}
-            // pagination={{ clickable: true }}
-            breakpoints={{
-              640: {
-                slidesPerView: 1,
-                spaceBetween: 0,
-              },
-              768: {
-                slidesPerView: 2,
-                spaceBetween: 20,
-              },
-              1024: {
-                slidesPerView: 3,
-                spaceBetween: 30,
-              },
-            }}
-          > */}
+            
             <div className="flex gap-[24px] mx-auto w-[342px] md:w-full lg:w-full">
               {/* <div className="w-[342px] lg:w-[416px] h-[317px] lg:h-[408px] flex flex-col py-[24px] px-[32px] items-start gap-[24px] border-l-2 border-solid border-[#070606]">
                 <p className="text-[16px] lg:text-[24px] font-normal leading-[32px] text-[#292929]">
@@ -359,16 +342,6 @@ export default function ContentLayout() {
               </div> */}
               <Swipe />
             </div>
-            {/* <div className="flex gap-[16px] self-end">
-              <button className="flex justify-center items-center w-[60px] h-[60px] bg-[#FFF] p-[18px] border-[#000] rounded-full border-solid border-[1px]">
-                <img src={arrowsmallleft} alt="left button" />
-              </button>
-              <button className="flex justify-center items-center w-[60px] h-[60px] bg-[#FFF] p-[18px] border-[#000] rounded-full border-solid border-[1px] ">
-                <img src={arrowsmallright} alt="right button" />
-              </button>
-            </div> */}
-            {/* <SwiperNavButtons/> */}
-            {/* </Swiper> */}
           </div>
         </div>
       </section>
