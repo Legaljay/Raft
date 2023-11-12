@@ -28,13 +28,16 @@ import banknotes from "../assets/svg/banknotes.svg";
 import circlestack from "../assets/svg/circle-stack.png";
 import arowleftright from "../assets/svg/arrows-right-left.svg";
 import Accordion from "./Accordion";
+import Swipe, { SwiperNavButtons } from "./swipe";
+import {Swiper} from "swiper/react";
+import {A11y, Navigation, Pagination } from "swiper/modules";
 
 export default function ContentLayout() {
   return (
     <>
       <section className="bg-black">
         <div className="mt-[90px]">
-          <div className="w-[896px] flex flex-col gap-[32px]  mx-auto justify-center items-center text-white">
+          <div className="w-[342px] lg:w-[896px]  flex flex-col gap-[32px]  mx-auto justify-center items-center text-white">
             <div className="items-center flex-col flex gap-[16px] self-stretch">
               <span className="flex justify-center items-center gap-[10px] px-[6px] py-[12px] w-[204px] h-[32px]  bg-white/20  rounded-[100px] text-center">
                 <span className="text-[16px] font-[400] text-[#DCDCDC] leading-none">
@@ -56,15 +59,15 @@ export default function ContentLayout() {
                 </svg>
               </span>
               <div className="relative flex flex-col gap-[24px] justify-center items-center">
-                <p className="w-[896px] text-[96px] text-center drop-shadow font-none leading-tight p-0 ">
+                <p className="w-[342px] lg:w-[896px] text-[40px] lg:text-[96px] text-center drop-shadow font-none leading-tight p-0 ">
                   Building the future of banking
                 </p>
-                <p className="w-[668px] text-center text-[24px] text-[#BDBDBD] font-[400] leading-none">
+                <p className="w-[342px] lg:w-[668px] text-center text-[16px] lg:text-[24px] text-[#BDBDBD] font-[400] leading-none">
                   Experience the future of banking with RAFT. We&apos;re here to
                   empower your financial journey.
                 </p>
                 <div className="absolute top-0 left-0 z-0">
-                  <svg
+                  <svg className="w-[342px] md:w-[500px] lg:w-[842px] h-[340px] md:h-[450px] lg:h-[552px]"
                     xmlns="http://www.w3.org/2000/svg"
                     width="842"
                     height="552"
@@ -109,12 +112,12 @@ export default function ContentLayout() {
             <p className="text-[#BDBDBD] text-[20px] font-[510]">
               FEATURED AND SEEN IN
             </p>
-            <div className="flex gap-[80px] w-[860px]">
-              <img src={Forbes} alt="forbes logo" />
-              <img src={CNBC} alt="cnbc logo" />
-              <img src={Bloomberg} alt="bloomberg logo" />
-              <img src={reuterLogo} alt="reuter logo" />
-              <img src={CNN} alt="cnn logo" />
+            <div className="flex gap-[23px] lg:gap-[80px] w-[342px] md:w-[500px] lg:w-[860px]">
+              <img src={Forbes} alt="forbes logo" className="w-[50px]"/>
+              <img src={CNBC} alt="cnbc logo" className="w-[50px]"/>
+              <img src={Bloomberg} alt="bloomberg logo" className="w-[50px]"/>
+              <img src={reuterLogo} alt="reuter logo" className="w-[50px]" />
+              <img src={CNN} alt="cnn logo" className="w-[50px]"/>
             </div>
             {/* <Header 
                     title={'Elevate Your Financial Journey with RAFT'}
@@ -123,7 +126,7 @@ export default function ContentLayout() {
           </div>
         </div>
       </section>
-      <section className="mt-[192px]">
+      <section className="mt-[103px] lg:mt-[192px]">
         <Header
           title={"Elevate Your Financial Journey with RAFT"}
           text={
@@ -133,7 +136,7 @@ export default function ContentLayout() {
         <GridMages />
       </section>
 
-      <section className="text-white mt-[180px]">
+      <section className="text-white mt-[100px] lg:mt-[180px]">
         <Header
           title={"Your Financial Freedom, Your Way"}
           text={
@@ -143,23 +146,23 @@ export default function ContentLayout() {
         <div className="mt-[124px]">
           <img src={people} alt="people cash" className="w-[1296px] mx-auto" />
         </div>
-        <div className="mt-[171px]">
-          <div className="w-[1296px] flex gap-[24px] mx-auto">
+        <div className="mt-[56px] lg:mt-[171px]">
+          <div className="w-[342px] lg:w-[1296px] flex flex-col lg:flex-row gap-[24px] mx-auto">
             {data.map((item) => (
               <Offers key={item.icon} {...item} />
             ))}
           </div>
         </div>
       </section>
-      <section className="mt-[17px]">
-        <div className="bg-[#48D64C] px-[72px] py-[132px]">
-          <p className="text-[128px] font-[400] leading-none text-[#070606]">
+      <section className="mt-[96px] lg:mt-[17px]">
+        <div className="bg-[#48D64C] px-[24px] lg:px-[72px] py-[32px] lg:py-[132px]">
+          <p className="text-[60px] lg:text-[128px] font-[400] leading-none text-[#070606]">
             Smart investments, <br />
             secure payments, <br />
             and expert guidance, all in one place.
           </p>
         </div>
-        <div className="mt-[124px] ml-[84px]">
+        <div className="mt-[96px] lg:mt-[124px] lg:mx-0 mx-[24px] lg:ml-[84px]">
           <Header
             title={"Confidently Shape Your Financial Future"}
             text={
@@ -169,7 +172,7 @@ export default function ContentLayout() {
             t={""}
           />
         </div>
-        <div className="w-[1296px] flex gap-[56px] mx-auto mt-[72px]">
+        <div className="w-[342px] lg:w-[1296px] flex flex-col lg:flex-row gap-[32px] lg:gap-[56px] mx-auto mt-[80px] lg:mt-[72px]">
           <Cards
             image={moneySend}
             title={"Spend better"}
@@ -185,34 +188,34 @@ export default function ContentLayout() {
             }
           />
         </div>
-        <div className="flex justify-between w-[1296px] mx-auto my-[100px]">
+        <div className="flex justify-between w-[342px] md:w-[] lg:w-[1296px] mx-auto my-[60px] lg:my-[100px]">
           <div className="flex flex-col gap-[16px] items-center">
-            <p className="text-[80px] font-[590] leading-none text-[#fff]">
+            <p className="text-[20px] lg:text-[80px] font-[590] leading-none text-[#fff]">
               50+
             </p>
-            <p className="text-[18px] font-[510] leading-none text-[#BDBDBD]">
+            <p className="text-[12px] lg:text-[18px] font-[510] leading-none text-[#BDBDBD]">
               CITIES
             </p>
           </div>
           <div className="flex flex-col gap-[16px] items-center">
-            <p className="text-[80px] font-[590] leading-none text-[#fff]">
+            <p className="text-[20px] lg:text-[80px] font-[590] leading-none text-[#fff]">
               50,000+
             </p>
-            <p className="text-[18px] font-[510] leading-none text-[#BDBDBD] uppercase">
+            <p className="text-[12px] lg:text-[18px] font-[510] leading-none text-[#BDBDBD] uppercase">
               Transactions
             </p>
           </div>
           <div className="flex flex-col gap-[16px] items-center">
-            <p className="text-[80px] font-[590] leading-none text-[#fff]">
+            <p className="text-[20px] lg:text-[80px] font-[590] leading-none text-[#fff]">
               3M+
             </p>
-            <p className="text-[18px] font-[510] leading-none text-[#BDBDBD] uppercase">
+            <p className="text-[12px] lg:text-[18px] font-[510] leading-none text-[#BDBDBD] uppercase">
               Users
             </p>
           </div>
           <div className="flex flex-col gap-[16px] items-center">
-            <p className="text-[80px] font-[590] leading-none text-[#fff]">5</p>
-            <p className="text-[18px] font-[510] leading-none text-[#BDBDBD] uppercase">
+            <p className="text-[20px] lg:text-[80px] font-[590] leading-none text-[#fff]">5</p>
+            <p className="text-[12px] lg:text-[18px] font-[510] leading-none text-[#BDBDBD] uppercase">
               User Ratings
             </p>
           </div>
@@ -222,7 +225,7 @@ export default function ContentLayout() {
         </div>
       </section>
       <section className="mt-[120px]">
-        <div className="w-[896px] flex flex-col gap-[16px] mx-auto">
+        <div className="w-[342px] lg:w-[896px] flex flex-col gap-[16px] mx-auto">
           <p className="text-[#48D64C] text-[18px] font-[510] text-center">
             INTRODUCING
           </p>
@@ -237,102 +240,125 @@ export default function ContentLayout() {
           <img src={customATM} alt="atm" className="mx-auto" />
         </div>
         <div className="mt-[171px] mb-[113px]">
-          <div className="w-[1296px] flex gap-[24px] mx-auto">
+          <div className="w-[342px] lg:w-[1296px] flex flex-col lg:flex-row gap-[24px] mx-auto">
             {data2.map((item) => (
               <Offers key={item.icon} {...item} />
             ))}
           </div>
         </div>
-        <div className="px-[72px] pt-[100px] pb-[68px] bg-[#48D64C] flex flex-col gap-[104px]">
-          <p className="text-center text-[76px] font-normal leading-normal text-[#070606]">
+        <div className="px-[24px] lg:px-[72px] pt-[32px] md:pt-[32px] lg:pt-[100px] pb-[32px] md:pb-[32px] lg:pb-[68px] bg-[#48D64C] flex flex-col gap-[40px] md:gap-[104px]">
+          <p className="mx-auto w-[342px] lg:w-full text-center text-[32px] lg:text-[76px] font-normal leading-normal text-[#070606]">
             Join over 3 million members
           </p>
           <div className="flex flex-col gap-[40px]">
-            <div className="flex gap-[24px] mx-auto">
-              <div className="w-[416px] h-[408px] flex flex-col py-[24px] px-[32px] items-start gap-[24px] border-l-2 border-solid border-[#070606]">
-                <p className="text-[24px] font-normal leading-[32px] text-[#292929]">
+          {/* <Swiper
+            modules={[Navigation, Pagination, A11y]}
+            spaceBetween={30}
+            slidesPerView={1}
+            // pagination={{ clickable: true }}
+            breakpoints={{
+              640: {
+                slidesPerView: 1,
+                spaceBetween: 0,
+              },
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              1024: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+              },
+            }}
+          > */}
+            <div className="flex gap-[24px] mx-auto w-[342px] md:w-full lg:w-full">
+              {/* <div className="w-[342px] lg:w-[416px] h-[317px] lg:h-[408px] flex flex-col py-[24px] px-[32px] items-start gap-[24px] border-l-2 border-solid border-[#070606]">
+                <p className="text-[16px] lg:text-[24px] font-normal leading-[32px] text-[#292929]">
                   RAFT has transformed my approach to finance. Their smart
                   investing options have helped me grow my wealth, and their
                   user-friendly platform makes managing my money a breeze. I've
                   never felt more confident about my financial future.
                 </p>
-                <div className="flex h-[80px] items-center w-[352px] justify-between">
+                <div className="flex h-[80px] items-center w-[277px] lg:w-[352px] justify-between">
                   <div className="flex flex-col gap-[8px]">
-                    <p className="text-[24px] font-[510] text-[#070606] leading-[24px]">
+                    <p className="text-[20px] lg:text-[24px] font-[510] text-[#070606] leading-[24px]">
                       Robert Fox
                     </p>
-                    <p className="text-[14px] font-normal leading-normal text-[#292929]">
+                    <p className="text-[12px] lg:text-[14px] font-normal leading-normal text-[#292929]">
                       Happy RAFT User
                     </p>
                   </div>
                   <img
                     src={framethree}
                     alt="user"
-                    className="w-[80px] h-[80px]"
+                    className="w-[40px] lg:w-[80px] h-[40px] lg:h-[80px]"
                   />
                 </div>
-              </div>
-              <div className="w-[416px] flex flex-col py-[24px] px-[32px] items-start gap-[24px] border-l-2 border-solid border-[#070606]">
-                <p className="text-[24px] font-normal leading-[32px] text-[#292929]">
+              </div> */}
+              {/* <div className="w-[342px] lg:w-[416px] h-[317px] lg:h-[408px] flex flex-col py-[24px] px-[32px] items-start gap-[24px] border-l-2 border-solid border-[#070606]">
+                <p className="text-[16px] lg:text-[24px] font-normal leading-[32px] text-[#292929]">
                   I can't express how grateful I am to RAFT. Their wealth
                   management services have been a game-changer for my family's
                   financial security. The expert guidance and personalized
                   strategies have given us peace of mind, knowing that our
                   future is in capable hands.
                 </p>
-                <div className="flex h-[80px] items-center w-[352px] justify-between">
+                <div className="flex h-[80px] items-center w-[277px] lg:w-[352px] justify-between">
                   <div className="flex flex-col gap-[8px]">
-                    <p className="text-[24px] font-[510] text-[#070606] leading-[24px]">
+                    <p className="text-[20px] lg:text-[24px] font-[510] text-[#070606] leading-[24px]">
                       Cameron Williamson
                     </p>
-                    <p className="text-[14px] font-normal leading-normal text-[#292929]">
+                    <p className="text-[12px] lg:text-[14px] font-normal leading-normal text-[#292929]">
                       Happy RAFT User
                     </p>
                   </div>
                   <img
                     src={framefour}
                     alt="user"
-                    className="w-[80px] h-[80px]"
+                    className="w-[40px] lg:w-[80px] h-[40px] lg:h-[80px]"
                   />
                 </div>
-              </div>
-              <div className="w-[416px] flex flex-col py-[24px] px-[32px] items-start gap-[24px] border-l-2 border-solid border-[#070606]">
-                <p className="text-[24px] font-normal leading-[32px] text-[#292929]">
+              </div> */}
+              {/* <div className="w-[342px] lg:w-[416px] h-[317px] lg:h-[408px] flex flex-col py-[24px] px-[32px] items-start gap-[24px] border-l-2 border-solid border-[#070606]">
+                <p className="text-[16px] lg:text-[24px] font-normal leading-[32px] text-[#292929]">
                   RAFT's financial planning services have been a lifeline for
                   me. I always struggled with managing my money, but their team
                   crafted a tailored plan that addressed my goals and concerns.
                   It's been a game-changer in achieving my financial dreams
                 </p>
-                <div className="flex h-[80px] items-center w-[352px] justify-between">
+                <div className="flex h-[80px] items-center w-[277px] lg:w-[352px] justify-between">
                   <div className="flex flex-col gap-[8px]">
-                    <p className="text-[24px] font-[510] text-[#070606] leading-[24px]">
+                    <p className="text-[20px] lg:text-[24px] font-[510] text-[#070606] leading-[24px]">
                       Esther Howard
                     </p>
-                    <p className="text-[14px] font-normal leading-normal text-[#292929]">
+                    <p className="text-[12px] lg:text-[14px] font-normal leading-normal text-[#292929]">
                       Happy RAFT User
                     </p>
                   </div>
                   <img
                     src={framefive}
                     alt="user"
-                    className="w-[80px] h-[80px]"
+                    className="w-[40px] lg:w-[80px] h-[40px] lg:h-[80px]"
                   />
                 </div>
-              </div>
+              </div> */}
+              <Swipe/>
             </div>
-            <div className="flex gap-[16px] self-end">
+            {/* <div className="flex gap-[16px] self-end">
               <button className="flex justify-center items-center w-[60px] h-[60px] bg-[#FFF] p-[18px] border-[#000] rounded-full border-solid border-[1px]">
                 <img src={arrowsmallleft} alt="left button" />
               </button>
               <button className="flex justify-center items-center w-[60px] h-[60px] bg-[#FFF] p-[18px] border-[#000] rounded-full border-solid border-[1px] ">
                 <img src={arrowsmallright} alt="right button" />
               </button>
-            </div>
+            </div> */}
+            {/* <SwiperNavButtons/> */}
+          {/* </Swiper> */}
           </div>
         </div>
       </section>
       <section>
-        <div className="mt-[124px] ml-[84px]">
+        <div className="mt-[124px] ml-[24px] mr-[24px] lg:ml-[84px]">
           <Header
             title={"Frequently asked questions"}
             textClass={"text-start"}
@@ -348,21 +374,21 @@ export default function ContentLayout() {
 function Header({ title, text, textClass, t }) {
   return (
     <div
-      className={`flex flex-col ${t ?? "items-center"} gap-[24px] w-[896px] ${
+      className={`flex flex-col ${t ?? "items-center"} gap-[24px] w-[342px] lg:w-[896px] ${
         t ?? "mx-auto"
       }`}
     >
       <p
-        className={`text-[76px] text-[#ffffff] ${
+        className={`text-[36px] lg:text-[76px] text-[#ffffff] ${
           textClass || "text-center"
         } font-[400] leading-tight`}
       >
         {title}
       </p>
       <p
-        className={`text-[#989898] text-[20px] w-[668px] ${
+        className={`text-[#989898] text-[16px] lg:text-[20px] w-[342px] lg:w-[668px] ${
           textClass || "text-center"
-        } leading-[28px] font-[400]`}
+        } leading-[24px] lg:leading-[28px] font-[400]`}
       >
         {text}
       </p>
@@ -372,12 +398,12 @@ function Header({ title, text, textClass, t }) {
 
 function GridMages() {
   return (
-    <div className="flex flex-wrap mt-[80px] gap-y-8">
-      <div className="flex justify-between text-white gap-1 mx-auto w-[1296px]">
-        <div className="relative custom rounded-[12px] w-[822px] h-[500px] flex flex-col gap-1 justify-around items-center">
-          <img src={frame112} alt="Elev" className="w-[478px] h-[236px] z-10" />
-          <div className="self-start ml-[40px] flex flex-col gap-[16px] w-[516px]">
-            <h1 className="text-[#fff] text-[32px] font-[510] leading-[28px]">
+    <div className="flex flex-wrap mt-[80px] gap-y-[32px] lg:gap-y-8">
+      <div className="flex flex-wrap justify-between text-white gap-[32px] lg:gap-1 mx-auto w-[342px] lg:w-[1296px]">
+        <div className="relative custom rounded-[12px] w-[342px] lg:w-[822px] h-[395px] lg:h-[500px] flex flex-col gap-1 justify-around items-center">
+          <img src={frame112} alt="Elev" className="w-[294px] lg:w-[478px] h-[154px] lg:h-[236px] z-10" />
+          <div className="self-start ml-[40px] flex flex-col gap-[16px] w-[294px] lg:w-[516px]">
+            <h1 className="text-[#fff] text-[24px] lg:text-[32px] font-[510] leading-[28px]">
               Seamless Payments
             </h1>
             <p className="text-[16px] leading-[24px] font-[400] text-[#BDBDBD]">
@@ -390,14 +416,14 @@ function GridMages() {
           </div>
         </div>
 
-        <div className="relative custom border-[1.5px] rounded-[12px] w-[442px] h-[500px] flex  flex-col gap-1 justify-around items-center">
+        <div className="relative custom border-[1.5px] rounded-[12px] w-[342px] lg:w-[442px] h-[395px] lg:h-[500px] flex  flex-col gap-1 justify-around items-center">
           <img
             src={frameOne}
             alt="frameOne"
-            className="w-[409px] h-[228px] z-10"
+            className="w-[293px] lg:w-[409px] h-[164px] lg:h-[228px] z-10"
           />
-          <div className="self-start ml-[40px] flex flex-col gap-[16px] w-[362px]">
-            <h1 className="text-[#fff] text-[32px] font-[510] leading-[28px]">
+          <div className="self-start ml-[40px] flex flex-col gap-[16px] w-[294px] lg:w-[362px]">
+            <h1 className="text-[#fff] text-[24px] lg:text-[32px] font-[510] leading-[28px]">
               Smart Investing
             </h1>
             <p className="text-[16px] leading-[24px] font-[400] text-[#BDBDBD]">
@@ -411,15 +437,15 @@ function GridMages() {
           </div>
         </div>
       </div>
-      <div className="w-[1296px] flex justify-between text-white gap-1 mx-auto">
-        <div className="relative custom border-[1.5px] rounded-[12px] w-[442px] h-[500px] flex flex-col justify-around items-center gap-1">
+      <div className="flex flex-wrap justify-between text-white gap-[32px] lg:gap-1 mx-auto w-[342px] lg:w-[1296px]">
+        <div className="relative custom border-[1.5px] rounded-[12px] w-[342px] lg:w-[442px] h-[395px] lg:h-[500px] flex flex-col justify-around items-center gap-1">
           <img
             src={frame106}
             alt="frame gap"
-            className="w-[373px] h-[148px] z-10"
+            className="w-[294px] lg:w-[373px] h-[120px] lg:h-[148px] z-10"
           />
-          <div className="self-start ml-[40px] flex flex-col gap-[16px] w-[362px]">
-            <h1 className="text-[#fff] text-[32px] font-[510] leading-[28px]">
+          <div className="self-start ml-[40px] flex flex-col gap-[16px] w-[294px] lg:w-[362px]">
+            <h1 className="text-[#fff] text-[24px] lg:text-[32px] font-[510] leading-[28px]">
               Wealth Management
             </h1>
             <p className="text-[16px] leading-[24px] font-[400] text-[#BDBDBD]">
@@ -431,14 +457,14 @@ function GridMages() {
             <Strokes />
           </div>
         </div>
-        <div className="relative custom border-[1.5px] rounded-[12px] w-[822px] h-[500px] flex  flex-col gap-1 justify-around items-center">
+        <div className="relative custom border-[1.5px] rounded-[12px] w-[342px] lg:w-[822px] h-[395px] lg:h-[500px] flex  flex-col gap-1 justify-around items-center">
           <img
             src={group8}
             alt="group8"
             className="w-[293px] h-[190px] z-10 self-center"
           />
-          <div className="self-start ml-[40px] flex flex-col gap-[16px] w-[516px]">
-            <h1 className="text-[#fff] text-[32px] font-[510] leading-[28px]">
+          <div className="self-start ml-[40px] flex flex-col gap-[16px] w-[] lg:w-[516px]">
+            <h1 className="text-[#fff] text-[24px] lg:text-[32px] font-[510] leading-[28px]">
               Financial Planning
             </h1>
             <p className="text-[16px] leading-[24px] font-[400] text-[#BDBDBD]">
@@ -457,7 +483,7 @@ function GridMages() {
 
 function Strokes({ width }) {
   return (
-    <svg
+    <svg className="w-[342px] lg:w-[400px]"
       xmlns="http://www.w3.org/2000/svg"
       width={width || "810"}
       height="349"
@@ -525,10 +551,10 @@ const data2 = [
 
 function Offers({ icon, title, text }) {
   return (
-    <div className="w-[416px] flex flex-col gap-[10px]">
+    <div className="w-[342px] lg:w-[416px] flex flex-col gap-[10px]">
       <div className="flex gap-[8px] items-center">
         <img src={icon} alt="" className="w-[24px] h-[24px]" />
-        <h3 className="text-[24px] font-[510] leading-none text-[#fff]">
+        <h3 className="text-[20px] lg:text-[24px] font-[510] leading-none text-[#fff]">
           {title}
         </h3>
       </div>
@@ -539,24 +565,24 @@ function Offers({ icon, title, text }) {
   );
 }
 
-function Cards({ image, title, text }) {
+function Cards({ image, title, text }) { 
   return (
-    <div className="relative flex flex-col w-[620px] h-[670px] p-[52px] gap-[124px] custom">
-      <div className="w-[516px] flex flex-col gap-[16px]">
-        <h3 className="text-[32px] font-[510] leading-[28px] text-[#fff]">
+    <div className="relative flex flex-col w-[342px] lg:w-[620px] h-[440px] lg:h-[670px] p-[24px] lg:p-[52px] md:gap-[76px] lg:gap-[124px] custom">
+      <div className="w-[294px] lg:w-[516px] flex flex-col gap-[16px]">
+        <h3 className="text-[24px] lg:text-[32px] font-[510] leading-[28px] text-[#fff]">
           {title}
         </h3>
-        <p className="text-[20px] font-[400] leading-[28px] text-[#BDBDBD]">
+        <p className="text-[16px] lg:text-[20px] font-[400] leading-[24px] lg:leading-[28px] text-[#BDBDBD]">
           {text}
         </p>
       </div>
       <img
         src={image}
         alt="money send"
-        className="w-[200px] h-[200px] self-center z-10"
+        className="md:w-[120px] lg:w-[200px] md:h-[120px] lg:h-[200px] self-center z-10"
       />
-      <div className="absolute top-[200px] left-0 w-[570px] h-[392px] z-0">
-        <svg
+      <div className="absolute md:top-20px lg:top-[200px] left-0 w-[340px] lg:w-[570px] h-[244px] lg:h-[392px] z-0">
+        <svg className="w-[340px] lg:w-[601px] h-[244px] lg:h-[392px]"
           xmlns="http://www.w3.org/2000/svg"
           width="601"
           height="395"

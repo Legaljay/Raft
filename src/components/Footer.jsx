@@ -6,20 +6,20 @@ import Copy from '../assets/svg/ph_copyright-light.svg';
 
 export const Footer = () => {
   return (
-    <footer className="flex flex-col gap-[60px] mt-[160px] w-[1296px] mx-auto">
-      <div className="w-[363px] flex justify-between gap-[4px] items-center w-">
+    <footer className="flex flex-col gap-[60px] mt-[160px] w-[342px] lg:w-[1296px] mx-auto">
+      <div className="w-[211px] lg:w-[363px] flex justify-between gap-[4px] items-center w-">
         <img src={Raft} alt="Raft Logo" />
-        <p className="font-normal leading-normal text-[128px] text-[#fff]">
+        <p className="font-normal leading-normal text-[76px] lg:text-[128px] text-[#fff]">
           Raft
         </p>
       </div>
       <hr className="h-[1px] bg-[#3d3d3d]" />
-      <div className="w-[1296px] flex flex-col gap-[52px] ">
-        <div className="flex justify-between">
-          <div className="w-[457px] h-[140px] border-[1px] border-dashed border-[#fff] py-[20px] px-[16px] flex gap-[12px]">
-            <img src={QR} alt="QR" className="w-[100px] h-[100px]" />
+      <div className="w-[342px] lg:w-[1296px] flex flex-col gap-[52px] ">
+        <div className="flex flex-wrap justify-between gap-[56px]">
+          <div className="w-[342px] h-[120px] lg:w-[457px] lg:h-[140px] border-[1px] border-dashed border-[#fff] py-[20px] px-[16px] flex gap-[12px]">
+            <img src={QR} alt="QR" className="w-[80px] md:w-[100px] h-[80px] md:h-[100px]" />
             <div className="flex flex-col gap-[16px] h-[88px]">
-              <p className="text-[20px] text-[#fff] font-normal leading-normal">
+              <p className="text-[16px] md:text-[20px] text-[#fff] font-normal leading-normal">
                 Scan to download App on the Playstore and Appstore.
               </p>
               <span className="flex gap-[12px]">
@@ -29,8 +29,8 @@ export const Footer = () => {
             </div>
           </div>
           <div>
-            <div className="flex gap-[52px]">
-              <div className="w-[200px] flex flex-col gap-[16px]">
+            <div className="flex flex-wrap gap-[52px]">
+              <div className="w-[141px] lg:w-[200px] flex flex-col gap-[16px]">
                 <p className="text-[20px] text-[#fff] font-[510] leading-normal">
                   About us
                 </p>
@@ -40,7 +40,7 @@ export const Footer = () => {
                   <li>Press kits</li>
                 </ul>
               </div>
-              <div className="w-[200px] flex flex-col gap-[16px]">
+              <div className="w-[141px] lg:w-[200px] flex flex-col gap-[16px]">
                 <p className="text-[20px] text-[#fff] font-[510] leading-normal">
                   Legal
                 </p>

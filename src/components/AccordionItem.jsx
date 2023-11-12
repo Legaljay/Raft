@@ -17,7 +17,7 @@ export default function AccordionItem({
     <div className={`item ${isOpen ? "open" : ""}`} onClick={handleToggle}>
       <div className="flex flex-col gap-[40px]">
         <div className="flex justify-between items-center">
-          <p className="text-[24px] text-[#fff] font-[510] leading-normal">
+          <p className="text-[16px] lg:text-[24px] text-[#fff] font-[510] leading-normal">
             {title}
           </p>
           <span
@@ -33,7 +33,7 @@ export default function AccordionItem({
 
       {isOpen && (
         <div className="flex flex-col gap-6">
-            <div className="text-[18px] font-normal leading-[24px] text-[#BDBDBD]">
+            <div className="text-[12px] lg:text-[18px] font-normal leading-[24px] text-[#BDBDBD]">
                 {children}
             </div>
             <hr className="h-[0.2px] w-full bg-[#3D3D3D]" />
@@ -49,5 +49,5 @@ AccordionItem.propTypes = {
   text: PropTypes.string,
   currOpen: PropTypes.bool,
   onOpen: PropTypes.func.isRequired,
-  children: PropTypes.arrayOf(Object),
+  children: PropTypes.string,
 };
