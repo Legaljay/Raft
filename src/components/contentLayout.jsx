@@ -30,8 +30,8 @@ export default function ContentLayout() {
     <>
       <section className="bg-black">
         <div className="mt-[90px]">
-          <div className="w-[342px] lg:w-[896px]  flex flex-col gap-[32px]  mx-auto justify-center items-center text-white">
-            <div className="items-center flex-col flex gap-[16px] self-stretch">
+          <div className="w-[342px] lg:w-[896px]  flex flex-col gap-[32px]  mx-auto justify-center items-center text-white overflow-x-hidden">
+            <div className="items-center flex-col flex gap-[16px] self-stretch overflow-x-hidden">
               <motion.span className="flex justify-center items-center gap-[10px] px-[6px] py-[12px] w-[204px] h-[32px]  bg-white/20  rounded-[100px] text md:text-center">
                 <span className="text-[14px] md:text-[16px] font-[400] text-[#DCDCDC] leading-none">
                   Introducing Raft Cards
@@ -51,7 +51,7 @@ export default function ContentLayout() {
                   />
                 </svg>
               </motion.span>
-              <div className="relative flex flex-col gap-[24px] justify-center items-center">
+              <div className="relative flex flex-col gap-[24px] justify-center items-center overflow-x-hidden">
                 <motion.p
                   initial={{ opacity: 1, x: "-100vw" }}
                   animate={{ x: 0 }}
@@ -64,7 +64,7 @@ export default function ContentLayout() {
                   initial={{ opacity: 1, x: "100vw" }}
                   animate={{ x: 0 }}
                   transition={{ delay: .2, type: "spring", stiffness: 10 }}
-                  className="w-[342px] lg:w-[668px] text-center text-[16px] lg:text-[24px] text-[#BDBDBD] font-[400] leading-none"
+                  className="w-[342px] lg:w-[668px] text-center text-[16px] lg:text-[24px] text-[#BDBDBD] font-[400] leading-none overflow-x-hidden"
                 >
                   Experience the future of banking with RAFT. We&apos;re here to
                   empower your financial journey.
