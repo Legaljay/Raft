@@ -1,4 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+    font-family: "SF-Pro";
+    src: url(/SF-Pro.ttf) format('tff'),
+    url(/SF-Pro-Italic.ttf) format('tff');
+    font-style: normal;
+}
 
+body, ul, li, p, h1, h2, h3, span, div {
+    font-family: 'SF-Pro';
+}

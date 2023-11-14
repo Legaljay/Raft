@@ -22,6 +22,7 @@ import arowleftright from "../assets/svg/arrows-right-left.svg";
 import Accordion from "./Accordion";
 import Swipe from "./swipe";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 export default function ContentLayout() {
   const navigate = useNavigate();
@@ -31,7 +32,7 @@ export default function ContentLayout() {
         <div className="mt-[90px]">
           <div className="w-[342px] lg:w-[896px]  flex flex-col gap-[32px]  mx-auto justify-center items-center text-white">
             <div className="items-center flex-col flex gap-[16px] self-stretch">
-              <span className="flex justify-center items-center gap-[10px] px-[6px] py-[12px] w-[204px] h-[32px]  bg-white/20  rounded-[100px] text md:text-center">
+              <motion.span className="flex justify-center items-center gap-[10px] px-[6px] py-[12px] w-[204px] h-[32px]  bg-white/20  rounded-[100px] text md:text-center">
                 <span className="text-[14px] md:text-[16px] font-[400] text-[#DCDCDC] leading-none">
                   Introducing Raft Cards
                 </span>
@@ -49,15 +50,25 @@ export default function ContentLayout() {
                     fill="white"
                   />
                 </svg>
-              </span>
+              </motion.span>
               <div className="relative flex flex-col gap-[24px] justify-center items-center">
-                <p className="w-[342px] lg:w-[896px] text-[40px] lg:text-[96px] text-center drop-shadow font-none leading-tight p-0 ">
+                <motion.p
+                  initial={{ opacity: 1, x: "-100vw" }}
+                  animate={{ x: 0 }}
+                  transition={{ delay: .2, type: "spring", stiffness: 10 }}
+                  className="w-[342px] lg:w-[896px] text-[40px] lg:text-[96px] text-center drop-shadow font-none leading-tight p-0 "
+                >
                   Building the future of banking
-                </p>
-                <p className="w-[342px] lg:w-[668px] text-center text-[16px] lg:text-[24px] text-[#BDBDBD] font-[400] leading-none">
+                </motion.p>
+                <motion.p
+                  initial={{ opacity: 1, x: "100vw" }}
+                  animate={{ x: 0 }}
+                  transition={{ delay: .2, type: "spring", stiffness: 10 }}
+                  className="w-[342px] lg:w-[668px] text-center text-[16px] lg:text-[24px] text-[#BDBDBD] font-[400] leading-none"
+                >
                   Experience the future of banking with RAFT. We&apos;re here to
                   empower your financial journey.
-                </p>
+                </motion.p>
                 <div className="absolute top-0 left-0 z-0">
                   <svg
                     className="w-[342px] md:w-[500px] lg:w-[842px] h-[340px] md:h-[450px] lg:h-[552px]"
@@ -90,14 +101,26 @@ export default function ContentLayout() {
                 </div>
               </div>
             </div>
-            <button className="bg-[#2b892E] rounded-[100px] w-[146px] px-[32px] py-[16px] z-10 text-[14px] md:text-[16px]" onClick={() => navigate('/signup')}>
+            <motion.button
+              whileHover={{
+                scale: 1.1,
+                transition: { delay: 0.2, type: "spring", stiffness: 120 },
+                boxShadow: "0px 0px 0px 2px rgba(255,255,255,0.25)",
+              }}
+              className="bg-[#2b892E] rounded-[100px] w-[146px] px-[32px] py-[16px] z-10 text-[14px] md:text-[16px]"
+              onClick={() => navigate("/signup")}
+            >
               Get Started
-            </button>
+            </motion.button>
           </div>
         </div>
         <div className="mt-[56px] md:mt-[132px] w-full">
           <div className="">
-            <img className="w-[96%] mx-auto h-[380px] md:h-auto object-cover rounded-[12px] md:rounded-none" src={People} alt="people" />
+            <img
+              className="w-[96%] mx-auto h-[380px] md:h-auto object-cover rounded-[12px] md:rounded-none"
+              src={People}
+              alt="people"
+            />
           </div>
         </div>
         <div className="flex items-center justify-center mt-[50px]">
@@ -122,11 +145,11 @@ export default function ContentLayout() {
                 alt="reuter logo"
                 // className="w-[50px] md:w-full"
               />
-              <img 
-                src={CNN} 
-                alt="cnn logo" 
-                // className="w-[50px] md:w-full" 
-                />
+              <img
+                src={CNN}
+                alt="cnn logo"
+                // className="w-[50px] md:w-full"
+              />
             </div>
           </div>
         </div>
@@ -149,7 +172,11 @@ export default function ContentLayout() {
           }
         />
         <div className="mt-[124px]">
-          <img src={people} alt="people cash" className="w-[342px] md:w-[1296px] mx-auto h-[380px] md:h-auto object-cover rounded-[12px] md:rounded-none" />
+          <img
+            src={people}
+            alt="people cash"
+            className="w-[342px] md:w-[1296px] mx-auto h-[380px] md:h-auto object-cover rounded-[12px] md:rounded-none"
+          />
         </div>
         <div className="mt-[56px] lg:mt-[171px]">
           <div className="w-[342px] lg:w-[1296px] flex flex-col lg:flex-row gap-[24px] mx-auto">
@@ -228,7 +255,11 @@ export default function ContentLayout() {
           </div>
         </div>
         <div>
-          <img src={framesix} alt="people" className="w-full h-[500px] md:h-auto object-cover" />
+          <img
+            src={framesix}
+            alt="people"
+            className="w-full h-[500px] md:h-auto object-cover"
+          />
         </div>
       </section>
       <section className="mt-[120px]">
@@ -258,7 +289,6 @@ export default function ContentLayout() {
             Join over 3 million members
           </p>
           <div className="flex flex-col gap-[40px]">
-            
             <div className="flex gap-[24px] mx-auto w-[342px] md:w-full lg:w-full">
               {/* <div className="w-[342px] lg:w-[416px] h-[317px] lg:h-[408px] flex flex-col py-[24px] px-[32px] items-start gap-[24px] border-l-2 border-solid border-[#070606]">
                 <p className="text-[16px] lg:text-[24px] font-normal leading-[32px] text-[#292929]">

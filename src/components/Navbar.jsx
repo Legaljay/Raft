@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import Raft from "../assets/svg/import.svg";
 import {IoClose, IoMenu} from "react-icons/io5"
 import { NavLink, useNavigate } from "react-router-dom";
+import { motion } from 'framer-motion'
 
 const navLinks = [
   {
@@ -74,9 +75,37 @@ export default function Navbar() {
         </div>
         {isOpen? <IoClose size={24} color="white" onClick={() => setIsOpen(prev => !prev)}/>:<IoMenu className="md:hidden" size={24} color="white" onClick={() => setIsOpen(prev => !prev)}/>}
       </nav>
-      <ul className={`${isOpen ? 'block' : 'hidden'} flex flex-col absolute drop-shadow-sm top-[70px] right-0 w-[200px] bg-[#2b892e] text-[#070606] z-[10000]`}>
+      <motion.ul 
+        variants={{
+          open: {
+            clipPath: "inset(0% 0% 0% 0% round 10px)",
+            transition: {
+              type: "spring",
+              bounce: 0,
+              duration: 0.7,
+              delayChildren: 0.3,
+              staggerChildren: 0.05
+            }
+          },
+          closed: {
+            clipPath: "inset(10% 50% 90% 50% round 10px)",
+            transition: {
+              type: "spring",
+              bounce: 0,
+              duration: 0.3
+            }
+          }
+        }}
+        style={{ pointerEvents: isOpen ? "auto" : "none" }}
+        className={`${isOpen ? 'block' : 'hidden'} flex flex-col absolute drop-shadow-sm top-[70px] right-6 w-[200px] bg-[#2b892e] text-[#070606] z-[10000]`}
+      >
         {navLinks.map((link) => (
-          <li key={link.display} className="p-[20px] active:bg-[#2b892e]">
+          <motion.li 
+            key={link.display} 
+            className="p-[20px] active:bg-[#2b892e] border-b-[1px] border-solid border-[#989898]"
+            whileHover={{ scale: 1.04, originX: 0, textColor: '#bdbdbd', color: '#fff' }}
+            transition={{ duration: .2, type: 'spring' , stiffness: 300,}}
+          >
             <NavLink
               to={link.path}
               className={(navClass) =>
@@ -87,9 +116,10 @@ export default function Navbar() {
             >
               {link.display}
             </NavLink>
-          </li>
+          </motion.li>
         ))}
-      </ul>
+      </motion.ul>
     </div>
   );
 }
+
