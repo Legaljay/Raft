@@ -61,7 +61,7 @@ export default function ContentLayout() {
                   Building the future of banking
                 </motion.p>
                 <motion.p
-                  initial={{ opacity: 1, x: "100%" }}
+                  initial={{ opacity: 1, x: "100vw" }}
                   animate={{ x: 0 }}
                   transition={{ delay: .2, type: "spring", stiffness: 10 }}
                   className="w-[342px] lg:w-[668px] text-center text-[16px] lg:text-[24px] text-[#BDBDBD] font-[400] leading-none"
