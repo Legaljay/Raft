@@ -23,11 +23,54 @@ import Accordion from "./Accordion";
 import Swipe from "./swipe";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { Reveal } from "./Reveal";
+
+const svgVariant = {
+  hidden: { trans: -180 },
+  visible: {
+    rotate: 0,
+    transition: { duration: 1 },
+  },
+};
+
+const pathVariant = {
+  hidden: {
+    opacity: 0,
+    pathLength: 0,
+  },
+  visible: {
+    opacity: 1,
+    pathLength: 1,
+    transition: {
+      duration: 2,
+      ease: "easeInOut",
+    },
+  },
+};
+
+const cardVariants = {
+  offscreen: {
+    x: -20,
+    // y: 300,
+    opacity: 0,
+  },
+  onscreen: {
+    x: 0,
+    // y: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      stiffness: 100,
+      bounce: 0.2,
+      duration: 0.8,
+    },
+  },
+};
 
 export default function ContentLayout() {
   const navigate = useNavigate();
   return (
-    <>
+    <motion.div>
       <section className="bg-black">
         <div className="mt-[90px]">
           <div className="w-[342px] lg:w-[896px]  flex flex-col gap-[32px]  mx-auto justify-center items-center text-white">
@@ -36,26 +79,30 @@ export default function ContentLayout() {
                 <span className="text-[14px] md:text-[16px] font-[400] text-[#DCDCDC] leading-none">
                   Introducing Raft Cards
                 </span>
-                <svg
+                <motion.svg
+                  variants={svgVariant}
+                  initial="hidden"
+                  animate="visible"
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
                   height="20"
                   viewBox="0 0 21 20"
                   fill="none"
                 >
-                  <path
+                  <motion.path
+                    variants={pathVariant}
                     fillRule="evenodd"
                     clipRule="evenodd"
                     d="M14.0669 9.55806C14.311 9.80214 14.311 10.1979 14.0669 10.4419L7.81694 16.6919C7.57286 16.936 7.17714 16.936 6.93306 16.6919C6.68898 16.4479 6.68898 16.0521 6.93306 15.8081L12.7411 10L6.93306 4.19194C6.68898 3.94786 6.68898 3.55214 6.93306 3.30806C7.17714 3.06398 7.57286 3.06398 7.81694 3.30806L14.0669 9.55806Z"
                     fill="white"
                   />
-                </svg>
+                </motion.svg>
               </motion.span>
               <div className="relative flex flex-col gap-[24px] justify-center items-center">
                 <motion.p
                   initial={{ opacity: 1, x: "-100vw" }}
                   animate={{ x: 0 }}
-                  transition={{ delay: .2, type: "spring", stiffness: 10 }}
+                  transition={{ delay: 0.2, type: "spring", stiffness: 10 }}
                   className="w-[342px] lg:w-[896px] text-[40px] lg:text-[96px] text-center drop-shadow font-none leading-tight p-0 "
                 >
                   Building the future of banking
@@ -63,7 +110,7 @@ export default function ContentLayout() {
                 <motion.p
                   initial={{ opacity: 1, x: "100vw" }}
                   animate={{ x: 0 }}
-                  transition={{ delay: .2, type: "spring", stiffness: 10 }}
+                  transition={{ delay: 0.2, type: "spring", stiffness: 10 }}
                   className="w-[342px] lg:w-[668px] text-center text-[16px] lg:text-[24px] text-[#BDBDBD] font-[400] leading-none"
                 >
                   Experience the future of banking with RAFT. We&apos;re here to
@@ -129,41 +176,56 @@ export default function ContentLayout() {
               FEATURED AND SEEN IN
             </p>
             <div className="grid grid-flow-col place-items-center gap-[23px] lg:gap-[80px] w-[342px] md:w-[500px] lg:w-[860px]">
-              <img
+              {/* <motion.img
+                variants={imgVariants}
+                initial="hidden"
+                animate="visible"
                 src={Forbes}
                 alt="forbes logo"
-                // className="w-[50px] md:w-full"
               />
-              <img src={CNBC} alt="cnbc logo" className="w-[50px] md:w-full" />
+              <img 
+                src={CNBC} 
+                alt="cnbc logo" 
+                // className="w-[50px] md:w-full" 
+                />
               <img
                 src={Bloomberg}
                 alt="bloomberg logo"
-                // className="w-[50px] md:w-full"
               />
               <img
                 src={reuterLogo}
                 alt="reuter logo"
-                // className="w-[50px] md:w-full"
               />
               <img
                 src={CNN}
                 alt="cnn logo"
-                // className="w-[50px] md:w-full"
-              />
+              /> */}
+              {images.map((image, index) => (
+                <Images
+                  key={index}
+                  i={index}
+                  src={image.image}
+                  name={image.name}
+                  // style={{width:"70px", height:"70px"}}
+                />
+              ))}
             </div>
           </div>
         </div>
       </section>
+      
       <section className="mt-[103px] lg:mt-[192px]">
-        <Header
-          title={"Elevate Your Financial Journey with RAFT"}
-          text={
-            "RAFT offers a world of financial possibilities. From investments to payments, we've got you covered. Join us and unlock your financial potential today."
-          }
-        />
+        <Reveal>
+          <Header
+            title={"Elevate Your Financial Journey with RAFT"}
+            text={
+              "RAFT offers a world of financial possibilities. From investments to payments, we've got you covered. Join us and unlock your financial potential today."
+            }
+          />
+        </Reveal>
         <GridMages />
       </section>
-
+      
       <section className="text-white mt-[100px] lg:mt-[180px]">
         <Header
           title={"Your Financial Freedom, Your Way"}
@@ -180,8 +242,13 @@ export default function ContentLayout() {
         </div>
         <div className="mt-[56px] lg:mt-[171px]">
           <div className="w-[342px] lg:w-[1296px] flex flex-col lg:flex-row gap-[24px] mx-auto">
-            {data.map((item) => (
-              <Offers key={item.icon} {...item} />
+            {data.map((item, i) => (
+              <Offers
+                key={item.icon}
+                {...item}
+                i={i}
+                cardVariants={cardVariants}
+              />
             ))}
           </div>
         </div>
@@ -206,6 +273,7 @@ export default function ContentLayout() {
         </div>
         <div className="w-[342px] lg:w-[1296px] flex flex-col lg:flex-row gap-[32px] lg:gap-[56px] mx-auto mt-[80px] lg:mt-[72px]">
           <Cards
+            animate={{ ...cardVariants }}
             image={moneySend}
             title={"Spend better"}
             text={
@@ -213,6 +281,7 @@ export default function ContentLayout() {
             }
           />
           <Cards
+            animate={{ ...cardVariants, offscreen: { x: 10, opacity: 0 } }}
             image={walletMinus}
             title={"Invest better"}
             text={
@@ -375,7 +444,61 @@ export default function ContentLayout() {
         </div>
         <Accordion />
       </section>
-    </>
+    </motion.div>
+  );
+}
+
+const images = [
+  {
+    name: "Forbes logo",
+    image: Forbes,
+  },
+  {
+    name: "CNBC logo",
+    image: CNBC,
+  },
+  {
+    name: "Bloomberg logo",
+    image: Bloomberg,
+  },
+  {
+    name: "Router logo",
+    image: reuterLogo,
+  },
+  {
+    name: "CNN logo",
+    image: CNN,
+  },
+];
+
+function Images({ src, name, i }) {
+  const imgVariants = {
+    hidden: {
+      translateX: "17vw",
+      translateY: "5vh",
+      rotate: -180,
+      opacity: 0,
+    },
+    visible: {
+      translateX: 0,
+      translateY: 0,
+      opacity: 1,
+      rotate: 0,
+      transition: {
+        ease: "easeInOut",
+        delay: i * .2,
+        duration: 0.6,
+      },
+    },
+  };
+  return (
+    <motion.img
+      variants={imgVariants}
+      initial="hidden"
+      whileInView="visible"
+      src={src}
+      alt={name}
+    />
   );
 }
 
@@ -409,7 +532,19 @@ function GridMages() {
     <div className="flex flex-wrap mt-[80px] gap-y-[32px] lg:gap-y-8">
       <div className="flex flex-wrap justify-between text-white gap-[32px] lg:gap-1 mx-auto w-[342px] lg:w-[1296px]">
         <div className="relative custom rounded-[12px] w-[342px] lg:w-[822px] h-[395px] lg:h-[500px] flex flex-col gap-1 justify-around items-center">
-          <img
+          <motion.img
+            initial={{ x: "-10vw", opacity: 0 }}
+            animate={{
+              x: 0,
+              opacity: 1,
+            }}
+            transition= {{
+              type: "spring",
+              stiffness: 100,
+              bounce: 0.2,
+              duration: 0.8,
+            }}
+            viewport={{once: false}}
             src={frame112}
             alt="Elev"
             className="w-[294px] lg:w-[478px] h-[154px] lg:h-[236px] z-10"
@@ -562,9 +697,29 @@ const data2 = [
   },
 ];
 
-function Offers({ icon, title, text }) {
+function Offers({ icon, title, text, i, cardVariants }) {
+  const cardAn = {
+    ...cardVariants,
+    onscreen: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        bounce: 0.2,
+        duration: 0.8,
+        delay: i * 0.8,
+      },
+    },
+  };
   return (
-    <div className="w-[342px] lg:w-[416px] flex flex-col gap-[10px]">
+    <motion.div
+      variants={cardAn}
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: false, amount: 0.8 }}
+      className="w-[342px] lg:w-[416px] flex flex-col gap-[10px]"
+    >
       <div className="flex gap-[8px] items-center">
         <img src={icon} alt="" className="w-[24px] h-[24px]" />
         <h3 className="text-[20px] lg:text-[24px] font-[510] leading-none text-[#fff]">
@@ -574,13 +729,20 @@ function Offers({ icon, title, text }) {
       <p className="text-[16px] font-[400] leading-[24px] text-[#bdbdbd]">
         {text}
       </p>
-    </div>
+    </motion.div>
   );
 }
 
-function Cards({ image, title, text }) {
+function Cards({ image, title, text, animate }) {
+  const { offscreen, onscreen } = animate;
   return (
-    <div className="relative flex flex-col w-[342px] lg:w-[620px] h-[440px] lg:h-[670px] p-[24px] lg:p-[52px] md:gap-[76px] lg:gap-[124px] custom">
+    <motion.div
+      variants={animate}
+      initial="offscreen"
+      whileInView="onscreen"
+      viewport={{ once: false, amount: 0.8 }}
+      className="relative flex flex-col w-[342px] lg:w-[620px] h-[440px] lg:h-[670px] p-[24px] lg:p-[52px] md:gap-[76px] lg:gap-[124px] custom"
+    >
       <div className="w-[294px] lg:w-[516px] flex flex-col gap-[16px]">
         <h3 className="text-[24px] lg:text-[32px] font-[510] leading-[28px] text-[#fff]">
           {title}
@@ -624,6 +786,6 @@ function Cards({ image, title, text }) {
           </defs>
         </svg>
       </div>
-    </div>
+    </motion.div>
   );
 }

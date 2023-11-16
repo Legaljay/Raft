@@ -8,6 +8,7 @@ import arrowsmallright from "../assets/arrow-small-right.svg";
 import framethree from "../assets/Images/Frame 127.png";
 import framefour from "../assets/Images/Frame 130.png";
 import framefive from "../assets/Images/Frame 136.png";
+import {motion} from 'framer-motion'
 
 const Swipe = () => {
   return (
@@ -26,28 +27,31 @@ const Swipe = () => {
             slidesPerView: 2,
             spaceBetween: 20,
           },
-          1024: {
+          1440: {
             slidesPerView: 3,
-            spaceBetween: 30,
+            spaceBetween: 60,
           },
         }}
       >
         <SwiperSlide>
             <div className="w-[342px] lg:w-[416px] h-[317px] lg:h-[408px] flex flex-col py-[24px] px-[32px] items-start gap-[24px] border-l-2 border-solid border-[#070606]">
-                <p className="text-[16px] lg:text-[24px] font-normal leading-[32px] text-[#292929]">
+                <motion.p 
+                  className="text-[16px] lg:text-[24px] font-normal leading-[32px] text-[#292929]">
                   RAFT has transformed my approach to finance. Their smart
                   investing options have helped me grow my wealth, and their
                   user-friendly platform makes managing my money a breeze. I've
                   never felt more confident about my financial future.
-                </p>
+                </motion.p>
                 <div className="flex h-[80px] items-center w-[277px] lg:w-[352px] justify-between">
                   <div className="flex flex-col gap-[8px]">
-                    <p className="text-[20px] lg:text-[24px] font-[510] text-[#070606] leading-[24px]">
+                    <motion.p 
+                      className="text-[20px] lg:text-[24px] font-[510] text-[#070606] leading-[24px]">
                       Robert Fox
-                    </p>
-                    <p className="text-[12px] lg:text-[14px] font-normal leading-normal text-[#292929]">
+                    </motion.p>
+                    <motion.p 
+                      className="text-[12px] lg:text-[14px] font-normal leading-normal text-[#292929]">
                       Happy RAFT User
-                    </p>
+                    </motion.p>
                   </div>
                   <img
                     src={framethree}
