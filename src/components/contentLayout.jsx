@@ -73,7 +73,7 @@ export default function ContentLayout() {
     <motion.div>
       <section className="bg-black">
         <div className="mt-[90px]">
-          <div className="w-[342px] lg:w-[896px]  flex flex-col gap-[32px]  mx-auto justify-center items-center text-white">
+          <div className="w-[342px] lg:w-[896px]  flex flex-col gap-[32px]  mx-auto justify-center items-center text-white overflow-hidden">
             <div className="items-center flex-col flex gap-[16px] self-stretch">
               <motion.span className="flex justify-center items-center gap-[10px] px-[6px] py-[12px] w-[204px] h-[32px]  bg-white/20  rounded-[100px] text md:text-center">
                 <span className="text-[14px] md:text-[16px] font-[400] text-[#DCDCDC] leading-none">
