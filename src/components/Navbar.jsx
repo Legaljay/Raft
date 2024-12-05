@@ -69,6 +69,10 @@ export default function Navbar() {
     })
   }
 
+  const handleHome = useCallback(() => {
+    navigate('/home');
+  }, [])
+
   useEffect(() => {
     handleStickyHeader();
 
@@ -78,7 +82,7 @@ export default function Navbar() {
   return (
     <div className="p-[16px] border-b border-[#989898] w-full" ref={headerRef}>
       <nav className="relative flex justify-between items-center h-[35px] bg-black w-full">
-        <span className="flex gap-[4px] w-[74px] h-[29px] justify-center items-center">
+        <span className="flex gap-[4px] w-[74px] h-[29px] justify-center items-center cursor-pointer" onClick={handleHome}>
           {/* <img src={Raft} alt="Raft" className="w-[24px] h-[24px]"/> */}
           <SvgAnimate/>
           <p className="text-[24px] text-[#fff] leading-normal font-normal">Raft</p>
